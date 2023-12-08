@@ -4,16 +4,17 @@ import (
 	"bytes"
 	"embed"
 	"fmt"
+	"html/template"
 	"net/http"
-	"text/template"
 )
 
+//go:embed template/include/*.tmpl template/*.tmpl
 var templateFS embed.FS
 
 // here we created a function to parse the templates like login and layout stuff
 func parseTmpl(name string) *template.Template {
 	tmpl := template.New(name)
-	tmpl = template.Must(template.ParseFS(templateFS, "template/include/*.html"))
+	tmpl = template.Must(template.ParseFS(templateFS, "template/include/*.tmpl"))
 	return template.Must(tmpl.ParseFS(templateFS, "template/"+name))
 }
 
@@ -25,7 +26,7 @@ func (h *Handler) renderTmpl(w http.ResponseWriter, tmpl *template.Template, dat
 	err := tmpl.Execute(&buff, data)
 	if err != nil {
 		//We use a logger here too cuz this might return something that user is not supposed to see ig
-		h.Logger.Output(2, fmt.Sprintf("could not render %q: %v\n", tmpl.Name, err))
+		h.Logger.Output(2, fmt.Sprintf("could not render %q: %v\n", tmpl.Name(), err))
 		http.Error(w, fmt.Sprintf("could not render %q", tmpl.Name()), http.StatusInternalServerError)
 		return
 	}

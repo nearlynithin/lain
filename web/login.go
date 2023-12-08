@@ -19,6 +19,6 @@ func (h *Handler) renderLogin(w http.ResponseWriter, data loginData, statusCode 
 }
 
 func(h *Handler) showLogin( w http.ResponseWriter, r *http.Request){
-	//This is gonna call the renderLogin function
+	//This is gonna call the renderLogin function	 
 	h.renderLogin(w,loginData{},http.StatusOK)
 }
