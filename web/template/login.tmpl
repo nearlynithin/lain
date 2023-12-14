@@ -1,4 +1,4 @@
- {{template "login.html".}}
+ {{template "login.tmpl".}}
 
  {{define "content"}}
  <main>
@@ -7,11 +7,11 @@
             <form action="/login" method ="POST">
                 <div>
                     <label for="email"> Email </label>
-                    <input type ="email" name="email" id ="email" required>
+                    <input type ="email" name="email" id ="email" placeholder="example@sjec.ac.in" required>
                 </div>
                 <div>
                     <label for="username"> Username </label>
-                    <input type ="text" name="username" id ="username" required>
+                    <input type ="text" name="username" id ="username" placeholder ="yourname" required>
                 </div>
 
                 <button>Login</button>

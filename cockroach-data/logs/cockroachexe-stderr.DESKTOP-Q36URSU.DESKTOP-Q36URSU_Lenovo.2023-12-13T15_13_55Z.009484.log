@@ -1,0 +1,6 @@
+I231213 15:13:55.172192 1 util/log/sync_buffer.go:195  [config] file created at: 2023/12/13 15:13:55
+I231213 15:13:55.172381 1 util/log/sync_buffer.go:195  [config] running on machine: DESKTOP-Q36URSU
+I231213 15:13:55.172425 1 util/log/sync_buffer.go:195  [config] binary: CockroachDB CCL v20.2.3 (x86_64-w64-mingw32, built 2020/12/14 18:43:04, go1.13.14)
+I231213 15:13:55.172452 1 util/log/sync_buffer.go:195  [config] arguments: [C:\Program Files\cockroach-v20.2.3.windows-6.2-amd64\cockroach.exe start-single-node --insecure --listen-addr 127.0.0.1]
+I231213 15:13:55.172526 1 util/log/sync_buffer.go:195  [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I231213 15:13:55.086905 1 util/log/flags.go:106  stderr capture started

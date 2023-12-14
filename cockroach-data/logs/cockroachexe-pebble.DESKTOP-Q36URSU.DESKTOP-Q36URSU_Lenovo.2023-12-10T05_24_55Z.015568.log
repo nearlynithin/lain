@@ -1,0 +1,31 @@
+I231210 05:24:55.259175 53 util/log/sync_buffer.go:195 ⋮ [config] file created at: 2023/12/10 05:24:55
+I231210 05:24:55.259205 53 util/log/sync_buffer.go:195 ⋮ [config] running on machine: ‹DESKTOP-Q36URSU›
+I231210 05:24:55.259221 53 util/log/sync_buffer.go:195 ⋮ [config] binary: CockroachDB CCL v20.2.3 (x86_64-w64-mingw32, built 2020/12/14 18:43:04, go1.13.14)
+I231210 05:24:55.259233 53 util/log/sync_buffer.go:195 ⋮ [config] arguments: ‹[C:\Program Files\cockroach-v20.2.3.windows-6.2-amd64\cockroach.exe start-single-node --insecure --listen-addr 127.0.0.1]›
+I231210 05:24:55.259255 53 util/log/sync_buffer.go:195 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I231210 05:24:55.257958 53 vendor/github.com/cockroachdb/pebble/version_set.go:142 ⋮ [n?] [JOB 1] MANIFEST created 000001
+I231210 05:24:55.308204 53 vendor/github.com/cockroachdb/pebble/open.go:295 ⋮ [n?] [JOB 1] WAL created 000002
+I231210 05:24:55.398799 23 vendor/github.com/cockroachdb/pebble/table_stats.go:118 ⋮ [n?] [JOB 2] all initial table stats loaded
+I231210 05:24:55.518121 53 vendor/github.com/cockroachdb/pebble/version_set.go:142 ⋮ [n?] [JOB 1] MANIFEST created 000001
+I231210 05:24:55.519354 53 vendor/github.com/cockroachdb/pebble/open.go:295 ⋮ [n?] [JOB 1] WAL created 000002
+I231210 05:24:55.591488 40 vendor/github.com/cockroachdb/pebble/table_stats.go:118 ⋮ [n?] [JOB 2] all initial table stats loaded
+I231210 05:24:57.127262 151 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 3] WAL created 000004
+I231210 05:25:07.247729 159 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 4] WAL created 000005
+I231210 05:25:37.226324 161 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 5] WAL created 000006
+I231210 05:26:47.339655 142 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 6] WAL created 000007
+I231210 05:29:07.309634 152 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 7] WAL created 000008
+I231210 05:33:47.579845 150 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 8] WAL created 000009
+I231210 05:43:07.209687 149 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 9] WAL created 000010
+I231210 06:01:57.225912 157 vendor/github.com/cockroachdb/pebble/db.go:1366 ⋮ [n1] [JOB 10] WAL created 000011
+I231210 06:01:57.410399 29622 vendor/github.com/cockroachdb/pebble/compaction.go:953 ⋮ [n1] [JOB 11] flushing 8 memtables to L0
+I231210 06:01:57.476089 29622 vendor/github.com/cockroachdb/pebble/compaction.go:1559 ⋮ [n1] [JOB 11] flushing: sstable created 000012
+I231210 06:01:58.597602 29622 vendor/github.com/cockroachdb/pebble/compaction.go:1008 ⋮ [n1] [JOB 11] flushed 8 memtables to L0 [000012] (448 K), in 0.8s, output rate 562 K/s
+I231210 06:01:58.598273 29622 vendor/github.com/cockroachdb/pebble/compaction.go:2298 ⋮ [n1] [JOB 11] WAL deleted 000008
+I231210 06:01:58.598837 29622 vendor/github.com/cockroachdb/pebble/compaction.go:2298 ⋮ [n1] [JOB 11] WAL deleted 000009
+I231210 06:01:58.611885 29622 vendor/github.com/cockroachdb/pebble/compaction.go:2298 ⋮ [n1] [JOB 11] WAL deleted 000010
+I231210 06:01:58.634546 29644 vendor/github.com/cockroachdb/pebble/compaction.go:1369 ⋮ [n1] [JOB 12] compacting L0 [000012] (448 K) + L6 [] (0 B)
+I231210 06:01:58.714441 29644 vendor/github.com/cockroachdb/pebble/compaction.go:1408 ⋮ [n1] [JOB 12] compacted L0 [000012] (448 K) + L6 [] (0 B) -> L6 [000012] (448 K), in 0.0s, output rate 8.0 E/s
+I231210 06:01:58.714739 29625 vendor/github.com/cockroachdb/pebble/compaction.go:1369 ⋮ [n1] [JOB 13] compacting L6 [000012] (448 K) + L6 [] (0 B)
+I231210 06:01:58.717217 29625 vendor/github.com/cockroachdb/pebble/compaction.go:1559 ⋮ [n1] [JOB 13] compacting: sstable created 000013
+I231210 06:01:58.838089 29625 vendor/github.com/cockroachdb/pebble/compaction.go:1408 ⋮ [n1] [JOB 13] compacted L6 [000012] (448 K) + L6 [] (0 B) -> L6 [000013] (360 K), in 0.1s, output rate 4.8 M/s
+I231210 06:01:58.873651 29625 vendor/github.com/cockroachdb/pebble/compaction.go:2312 ⋮ [n1] [JOB 13] sstable deleted 000012
