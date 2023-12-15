@@ -20,7 +20,7 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 	var out User
 
 	exists, err := svc.Queries.UserExistsByEmail(ctx, in.Email)
-	
+
 	if err != nil {
 		return out, err
 	}
@@ -49,9 +49,11 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 		Email:    in.Email,
 		Username: *in.Username,
 	})
+
 	if err != nil {
 		return out, err
 	}
+
 	return User{
 		ID:        userID,
 		Email:     in.Email,

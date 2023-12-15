@@ -8,7 +8,7 @@ import (
 )
 
 const createUser = `--name: CreateUser : one
-INSERT INTO  user (id, email, username)
+INSERT INTO users (id, email, username)
 VALUES ($1, $2, $3)
 RETURNING created_at;
 `
