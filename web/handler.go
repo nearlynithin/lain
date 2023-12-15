@@ -33,6 +33,10 @@ func (h *Handler) init() {
 		http.MethodPost: h.login,
 	})
 
+	r.Handle("/logout", mux.MethodHandler{
+		http.MethodPost: h.logout,
+	})
+
 	gob.Register(lain.User{})
 
 	h.session = sessions.New(h.SessionKey)

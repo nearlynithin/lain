@@ -9,6 +9,11 @@ import (
 	"github.com/rs/xid"
 )
 
+var (
+	ErrUserNotFound  = errors.New("user not found")
+	ErrUsernameTaken = errors.New("username taken")
+)
+
 //making a login function that is a part of the service
 
 type LoginInput struct {
@@ -30,7 +35,7 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 	}
 
 	if in.Username == nil {
-		return out, errors.New("User not Found")
+		return out, ErrUserNotFound
 	}
 
 	exists, err = svc.Queries.UserExistsByUsername(ctx, *in.Username)
@@ -39,7 +44,7 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 	}
 
 	if exists {
-		return out, errors.New("username taken")
+		return out, ErrUsernameTaken
 	}
 
 	//finally, creating a user here

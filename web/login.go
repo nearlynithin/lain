@@ -1,6 +1,7 @@
 package web
 
 import (
+	"errors"
 	"net/http"
 	"net/url"
 
@@ -40,6 +41,13 @@ func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	user, err := h.Service.Login(ctx, input)
+	if errors.Is(err, lain.ErrUserNotFound) || errors.Is(err, lain.ErrUsernameTaken) {
+		h.renderLogin(w, loginData{
+			Form: r.PostForm,
+			Err:  err,
+		}, http.StatusBadRequest)
+		return
+	}
 	if err != nil {
 		h.Logger.Printf("could not login: %v\n", err)
 		http.Error(w, "internal server error", http.StatusInternalServerError)
@@ -49,6 +57,11 @@ func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
 	//putting the user in the session using the user kkey
 	h.session.Put(r, "user", user)
 	//redirecting back to the homepage
+	http.Redirect(w, r, "/", http.StatusFound)
+}
+
+func (h *Handler) logout(w http.ResponseWriter, r *http.Request) {
+	h.session.Remove(r, "user")
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 

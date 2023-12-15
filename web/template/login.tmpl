@@ -7,12 +7,23 @@
             <form action="/login" method ="POST">
                 <div>
                     <label for="email"> Email </label>
-                    <input type ="email" name="email" id ="email" placeholder="example@sjec.ac.in" required>
+                    <input type ="email" name="email" id ="email" placeholder="example@sjec.ac.in" value='{{.Form.Get "email"}}' 
+                    required>
                 </div>
+
+                {{ with .Err}}
+                {{if or (eq .Error "user not found") (eq .Error "username taken") (eq .Error "invalid username")}}
                 <div>
-                    <label for="username"> Username </label>
-                    <input type ="text" name="username" id ="username" placeholder ="yourname" required>
+                    <label for="username">Username</label>
+                    <input type ="text" name="username" id ="username" placeholder ="yourname" value='{{$.Form.Get "username"}}' 
+                    required>
                 </div>
+                {{end}}
+                {{end}}
+
+                {{with .Err}}
+                <p>Could not login : <code>{{.Error}}</code></p>
+                {{end}}
 
                 <button>Login</button>
             </form>
