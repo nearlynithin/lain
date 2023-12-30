@@ -1,0 +1,248 @@
+I231215 15:12:01.144863 1 util/log/sync_buffer.go:195 ⋮ [config] file created at: 2023/12/15 15:12:01
+I231215 15:12:01.144926 1 util/log/sync_buffer.go:195 ⋮ [config] running on machine: ‹DESKTOP-Q36URSU›
+I231215 15:12:01.144969 1 util/log/sync_buffer.go:195 ⋮ [config] binary: CockroachDB CCL v20.2.3 (x86_64-w64-mingw32, built 2020/12/14 18:43:04, go1.13.14)
+I231215 15:12:01.145003 1 util/log/sync_buffer.go:195 ⋮ [config] arguments: ‹[C:\Program Files\cockroach-v20.2.3.windows-6.2-amd64\cockroach.exe start-single-node --insecure --listen-addr 127.0.0.1]›
+I231215 15:12:01.145068 1 util/log/sync_buffer.go:195 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W231215 15:12:01.142050 1 cli/start.go:1139 ⋮ ALL SECURITY CONTROLS HAVE BEEN DISABLED!
+
+This mode is intended for non-production testing only.
+
+In this mode:
+- Your cluster is open to any client that can access ‹127.0.0.1›.
+- Intruders with access to your machine or network can observe client-server traffic.
+- Intruders can log in without password and read or write any data in the cluster.
+- Intruders can consume all your server's resources and cause unavailability.
+I231215 15:12:01.193125 1 cli/start.go:1149 ⋮ To start a secure server without mandating TLS for clients,
+consider --accept-sql-without-tls instead. For other options, see:
+
+- ‹https://go.crdb.dev/issue-v/53404/v20.2›
+- https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+W231215 15:12:01.193669 1 cli/start.go:983 ⋮ ‹Using the default setting for --cache (128 MiB).›
+‹  A significantly larger value is usually needed for good performance.›
+‹  If you have a dedicated server a reasonable setting is --cache=.25 (2.0 GiB).›
+I231215 15:12:01.196173 1 cli/start.go:1164 ⋮ ‹CockroachDB CCL v20.2.3 (x86_64-w64-mingw32, built 2020/12/14 18:43:04, go1.13.14)›
+I231215 15:12:01.408854 1 server/config.go:434 ⋮ system total memory: ‹7.9 GiB›
+I231215 15:12:01.408909 1 server/config.go:436 ⋮ server configuration:
+‹max offset             500000000›
+‹cache size             128 MiB›
+‹SQL memory pool size   2.0 GiB›
+‹scan interval          10m0s›
+‹scan min idle time     10ms›
+‹scan max idle time     1s›
+‹event log enabled      true›
+I231215 15:12:01.424536 1 cli/start.go:968 ⋮ process identity: ‹uid S-1-5-21-1398560072-253756905-2351049174-1001, gid S-1-5-21-1398560072-253756905-2351049174-513›
+I231215 15:12:01.893302 1 cli/start.go:504 ⋮ GEOS loaded from directory ‹C:\Program Files\cockroach-v20.2.3.windows-6.2-amd64\lib›
+I231215 15:12:01.893905 1 cli/start.go:509 ⋮ starting cockroach node
+E231215 15:12:02.141765 13 server/status/runtime.go:328 ⋮ [n?] could not get initial disk IO counters: Incorrect function.
+I231215 15:12:03.144755 13 server/server.go:782 ⋮ [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I231215 15:12:06.135566 13 server/config.go:625 ⋮ [n?] 1 storage engine‹› initialized
+I231215 15:12:06.135645 13 server/config.go:628 ⋮ [n?] ‹Pebble cache size: 128 MiB›
+I231215 15:12:06.135668 13 server/config.go:628 ⋮ [n?] ‹store 0: RocksDB, max size 0 B, max open file limit 10000›
+I231215 15:12:07.116351 107 server/server.go:1416 ⋮ [n?] connecting to gossip network to verify cluster ID ‹"82c4472b-2e0b-4098-a55e-d93881b12bd5"›
+I231215 15:12:07.227615 13 gossip/gossip.go:403 ⋮ [n1] NodeDescriptor set to ‹node_id:1 address:<network_field:"tcp" address_field:"127.0.0.1:26257" > attrs:<> locality:<> ServerVersion:<major_val:20 minor_val:2 patch:0 unstable:0 > build_tag:"v20.2.3" started_at:1702653127227594300 cluster_name:"" sql_address:<network_field:"tcp" address_field:"127.0.0.1:26257" >›
+W231215 15:12:07.910460 160 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+W231215 15:12:07.909357 13 kv/kvserver/replica_range_lease.go:555 ⋮ [n1,s1,r25/1:‹/{Table/29-NamespaceTab…}›] can't determine lease status of (n1,s1):1 due to node liveness error: node not in the liveness table
+(1) attached stack trace
+  -- stack trace:
+  | github.com/cockroachdb/cockroach/pkg/kv/kvserver.init
+  | 	/go/src/github.com/cockroachdb/cockroach/pkg/kv/kvserver/node_liveness.go:45
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5228
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.main
+  | 	/usr/local/go/src/runtime/proc.go:190
+  | runtime.goexit
+  | 	/usr/local/go/src/runtime/asm_amd64.s:1357
+Wraps: (2) node not in the liveness table
+Error types: (1) *withstack.withStack (2) *errutil.leafError
+I231215 15:12:07.928185 107 server/server.go:1419 ⋮ [n1] node connected via gossip
+W231215 15:12:07.968803 160 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+W231215 15:12:08.058206 160 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I231215 15:12:08.190683 13 server/node.go:430 ⋮ [n1] initialized store [n1,s1]: disk (capacity=416 GiB, available=179 GiB, used=7.7 MiB, logicalBytes=39 MiB), ranges=36, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=3633.00 p90=18304.00 pMax=40272872.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I231215 15:12:08.235799 13 kv/kvserver/stores.go:236 ⋮ [n1] read 0 node addresses from persistent storage
+W231215 15:12:08.258916 160 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I231215 15:12:08.314465 13 server/node.go:489 ⋮ [n1] started with engine type ‹2›
+I231215 15:12:08.314584 13 server/node.go:491 ⋮ [n1] started with attributes ‹[]›
+I231215 15:12:08.315214 13 server/goroutinedumper/goroutinedumper.go:120 ⋮ [n1] writing goroutine dumps to ‹D:\lain\cockroach-data\logs\goroutine_dump›
+I231215 15:12:08.322221 13 server/heapprofiler/heapprofiler.go:49 ⋮ [n1] writing go heap profiles to ‹D:\lain\cockroach-data\logs\heap_profiler› at least every 1h0m0s
+I231215 15:12:08.322632 13 server/heapprofiler/cgoprofiler.go:53 ⋮ [n1] to enable jmalloc profiling: "export MALLOC_CONF=prof:true" or "ln -s prof:true /etc/malloc.conf"
+I231215 15:12:08.322683 13 server/heapprofiler/statsprofiler.go:54 ⋮ [n1] writing memory stats to ‹D:\lain\cockroach-data\logs\heap_profiler› at last every 1h0m0s
+I231215 15:12:08.322764 13 server/server.go:1536 ⋮ [n1] starting http server at ‹127.0.0.1:8080› (use: ‹127.0.0.1:8080›)
+I231215 15:12:08.322822 13 server/server.go:1543 ⋮ [n1] starting grpc/postgres server at ‹127.0.0.1:26257›
+I231215 15:12:08.322863 13 server/server.go:1544 ⋮ [n1] advertising CockroachDB node at ‹127.0.0.1:26257›
+I231215 15:12:09.056063 13 sql/sqlliveness/slinstance/slinstance.go:252 ⋮ [n1] starting SQL liveness instance
+I231215 15:12:09.264950 13 server/server_sql.go:753 ⋮ [n1] done ensuring all necessary migrations have run
+I231215 15:12:09.265040 13 server/server.go:1876 ⋮ [n1] serving sql connections
+I231215 15:12:09.464962 204 sql/temporary_schema.go:497 ⋮ [n1] running temporary object cleanup background job
+I231215 15:12:09.500163 13 cli/start.go:670 ⋮ [config] clusterID: ‹82c4472b-2e0b-4098-a55e-d93881b12bd5›
+I231215 15:12:09.610741 13 cli/start.go:680 ⋮ node startup completed:
+CockroachDB node starting at 2023-12-15 15:12:09.374074 +0000 UTC (took 8.3s)
+build:               CCL v20.2.3 @ 2020/12/14 18:43:04 (go1.13.14)
+webui:               ‹http://127.0.0.1:8080›
+sql:                 ‹postgresql://root@127.0.0.1:26257?sslmode=disable›
+RPC client flags:    ‹C:\Program Files\cockroach-v20.2.3.windows-6.2-amd64\cockroach.exe <client cmd> --host=127.0.0.1:26257 --insecure›
+logs:                ‹D:\lain\cockroach-data\logs›
+temp dir:            ‹D:\lain\cockroach-data\cockroach-temp526551643›
+external I/O path:   ‹D:\lain\cockroach-data\extern›
+store[0]:            ‹path=D:\lain\cockroach-data›
+storage engine:      pebble
+status:              restarted pre-existing node
+clusterID:           ‹82c4472b-2e0b-4098-a55e-d93881b12bd5›
+nodeID:              1
+I231215 15:12:09.450489 258 jobs/job_scheduler.go:346 ⋮ [n1] waiting 4m0s before scheduled jobs daemon start
+I231215 15:12:09.291388 116 gossip/gossip.go:1508 ⋮ [n1] node has connected to cluster via gossip
+I231215 15:12:09.825405 116 kv/kvserver/stores.go:255 ⋮ [n1] wrote 0 node addresses to persistent storage
+W231215 15:12:09.825621 141 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r4/1:‹/System{/tsd-tse}›] handle raft ready: 0.6s [applied=1, batches=1, state_assertions=0]
+I231215 15:12:10.217810 204 sql/temporary_schema.go:532 ⋮ [n1] found 0 temporary schemas
+I231215 15:12:10.217909 204 sql/temporary_schema.go:535 ⋮ [n1] early exiting temporary schema cleaner as no temporary schemas were found
+I231215 15:12:10.217948 204 sql/temporary_schema.go:536 ⋮ [n1] completed temporary object cleanup job
+I231215 15:12:10.217995 204 sql/temporary_schema.go:614 ⋮ [n1] temporary object cleaner next scheduled to run at 2023-12-15 15:42:09.2081344 +0000 UTC
+I231215 15:12:10.487453 259 server/server_update.go:55 ⋮ [n1] no need to upgrade, cluster already at the newest version
+I231215 15:12:10.695130 375 sql/catalog/lease/lease.go:2115 ⋮ released orphaned lease: ‹{id:52 version:1 expiration:{Time:{wall:982342000 ext:63838233975 loc:<nil>}}}›
+I231215 15:12:10.708030 374 sql/catalog/lease/lease.go:2115 ⋮ released orphaned lease: ‹{id:50 version:1 expiration:{Time:{wall:3192000 ext:63838233949 loc:<nil>}}}›
+I231215 15:12:10.858993 202 sql/sqlliveness/slstorage/slstorage.go:342 ⋮ [n1] inserted sqlliveness session ‹d8f288a4ebf545819d58318ac0cc5152›
+I231215 15:12:10.859511 202 sql/sqlliveness/slinstance/slinstance.go:143 ⋮ [n1] created new SQL liveness session ‹d8f288a4ebf545819d58318ac0cc5152›
+I231215 15:12:11.083789 200 sql/event_log.go:162 ⋮ [n1] Event: ‹"node_restart"›, target: 1, info: ‹{Descriptor:{NodeID:1 Address:127.0.0.1:26257 Attrs: Locality: ServerVersion:20.2 BuildTag:v20.2.3 StartedAt:1702653127227594300 LocalityAddress:[] ClusterName: SQLAddress:127.0.0.1:26257} ClusterID:82c4472b-2e0b-4098-a55e-d93881b12bd5 StartedAt:1702653127227594300 LastUp:1702636858190872100}›
+W231215 15:12:18.346307 125 server/status/runtime.go:449 ⋮ [n1] unable to get file descriptor usage (will not try again): ‹not implemented on windows›
+W231215 15:12:18.360081 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:12:18.373133 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 124 MiB RSS, 164 goroutines, 42 MiB/23 MiB/77 MiB GO alloc/idle/total, 622 KiB/1.3 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (20x), 1.4 KiB/15 KiB (r/w)net
+I231215 15:12:28.333092 120 kv/kvserver/store.go:2638 ⋮ [n1,s1] sstables (read amplification = 1):
+‹6 [ 2M 1 ]: 2M›
+I231215 15:12:28.333671 120 kv/kvserver/store.go:2639 ⋮ [n1,s1] ‹›
+‹__level_____count____size___score______in__ingest(sz_cnt)____move(sz_cnt)___write(sz_cnt)____read___r-amp___w-amp›
+‹    WAL         2   531 K       -   529 K       -       -       -       -   531 K       -       -       -     1.0›
+‹      0         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      1         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      2         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      3         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      4         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      5         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      6         1   2.3 M       -   203 K     0 B       0     0 B       0   2.3 M       1   2.4 M       1    11.6›
+‹  total         1   2.3 M       -   531 K     0 B       0     0 B       0   2.8 M       1   2.4 M       1     5.4›
+‹  flush         0›
+‹compact         1     0 B          (size == estimated-debt)›
+‹ memtbl         2    32 M›
+‹zmemtbl         0     0 B›
+‹   ztbl         0     0 B›
+‹ bcache        17   566 K   80.1%  (score == hit-rate)›
+‹ tcache         1   616 B   99.7%  (score == hit-rate)›
+‹ titers         0›
+‹ filter         -       -   85.0%  (score == utility)›
+W231215 15:12:28.346668 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:12:28.376176 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 90 MiB RSS, 164 goroutines, 22 MiB/43 MiB/40 MiB GO alloc/idle/total, 622 KiB/1.3 MiB CGO alloc/total, 737.8 CGO/sec, 4.7/3.4 %(u/s)time, 0.0 %gc (1x), 378 B/430 B (r/w)net
+I231215 15:12:32.368916 201 sql/sqlliveness/slstorage/slstorage.go:320 ⋮ [n1] deleted 1 expired SQL liveness sessions
+W231215 15:12:36.913590 130 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r35/1:‹/Table/{39-52}›] handle raft ready: 0.5s [applied=2, batches=1, state_assertions=0]
+W231215 15:12:38.347682 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:12:38.369121 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 90 MiB RSS, 166 goroutines, 18 MiB/47 MiB/40 MiB GO alloc/idle/total, 622 KiB/1.3 MiB CGO alloc/total, 1001.1 CGO/sec, 2.0/1.3 %(u/s)time, 0.0 %gc (1x), 64 KiB/43 KiB (r/w)net
+W231215 15:12:43.015996 143 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r35/1:‹/Table/{39-52}›] handle raft ready: 1.1s [applied=1, batches=1, state_assertions=0]
+W231215 15:12:43.097417 61 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r12/1:‹/Table/1{6-7}›] handle raft ready: 0.8s [applied=2, batches=1, state_assertions=0]
+W231215 15:12:48.348651 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:12:48.437911 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 91 MiB RSS, 167 goroutines, 26 MiB/40 MiB/40 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1288.7 CGO/sec, 1.9/1.4 %(u/s)time, 0.0 %gc (0x), 416 KiB/98 KiB (r/w)net
+W231215 15:12:58.459111 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:12:58.475145 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 93 MiB RSS, 168 goroutines, 20 MiB/44 MiB/42 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1292.0 CGO/sec, 2.6/1.1 %(u/s)time, 0.0 %gc (1x), 188 KiB/54 KiB (r/w)net
+I231215 15:13:08.356439 121 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+W231215 15:13:08.376831 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:08.430524 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 94 MiB RSS, 167 goroutines, 28 MiB/38 MiB/42 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1319.0 CGO/sec, 3.5/1.6 %(u/s)time, 0.0 %gc (0x), 16 KiB/44 KiB (r/w)net
+W231215 15:13:18.360993 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:18.385768 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 98 MiB RSS, 166 goroutines, 22 MiB/42 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1284.3 CGO/sec, 5.0/3.1 %(u/s)time, 1.0 %gc (1x), 836 B/1.1 KiB (r/w)net
+W231215 15:13:28.377220 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:28.390171 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 98 MiB RSS, 166 goroutines, 29 MiB/37 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1043.6 CGO/sec, 3.4/2.2 %(u/s)time, 0.0 %gc (0x), 1.0 KiB/2.2 KiB (r/w)net
+W231215 15:13:38.377686 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:38.437660 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 97 MiB RSS, 166 goroutines, 18 MiB/46 MiB/44 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1043.7 CGO/sec, 3.7/1.9 %(u/s)time, 0.0 %gc (1x), 2.2 KiB/3.4 KiB (r/w)net
+W231215 15:13:48.378521 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:48.457929 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 98 MiB RSS, 167 goroutines, 26 MiB/40 MiB/44 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1102.1 CGO/sec, 3.6/1.4 %(u/s)time, 0.0 %gc (0x), 14 KiB/11 KiB (r/w)net
+W231215 15:13:58.378929 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:13:58.420530 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 98 MiB RSS, 167 goroutines, 18 MiB/46 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1033.6 CGO/sec, 2.8/1.9 %(u/s)time, 0.0 %gc (1x), 1.3 KiB/3.0 KiB (r/w)net
+I231215 15:14:08.316682 121 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W231215 15:14:08.379362 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:08.445289 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 99 MiB RSS, 167 goroutines, 25 MiB/41 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1076.2 CGO/sec, 2.3/0.8 %(u/s)time, 0.0 %gc (0x), 2.6 KiB/5.2 KiB (r/w)net
+W231215 15:14:18.387648 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:18.405601 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 99 MiB RSS, 166 goroutines, 19 MiB/45 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1216.6 CGO/sec, 4.5/1.1 %(u/s)time, 0.0 %gc (1x), 2.4 KiB/2.6 KiB (r/w)net
+W231215 15:14:28.394234 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:28.450594 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 100 MiB RSS, 164 goroutines, 26 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1065.7 CGO/sec, 2.2/0.9 %(u/s)time, 0.0 %gc (0x), 2.0 KiB/3.0 KiB (r/w)net
+W231215 15:14:38.433743 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:38.503655 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 100 MiB RSS, 164 goroutines, 19 MiB/46 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1059.2 CGO/sec, 2.2/0.9 %(u/s)time, 0.0 %gc (1x), 152 B/130 B (r/w)net
+W231215 15:14:48.424920 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:48.459312 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 100 MiB RSS, 165 goroutines, 26 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1073.5 CGO/sec, 3.0/0.5 %(u/s)time, 0.0 %gc (0x), 468 B/215 B (r/w)net
+W231215 15:14:58.435612 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:14:58.543405 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 100 MiB RSS, 165 goroutines, 18 MiB/45 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1021.4 CGO/sec, 4.0/1.5 %(u/s)time, 0.0 %gc (1x), 756 B/621 B (r/w)net
+I231215 15:15:08.354836 121 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W231215 15:15:08.426390 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:08.451223 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 101 MiB RSS, 165 goroutines, 25 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1077.3 CGO/sec, 2.8/1.3 %(u/s)time, 0.0 %gc (0x), 740 B/481 B (r/w)net
+W231215 15:15:18.426580 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:18.435205 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 101 MiB RSS, 164 goroutines, 20 MiB/45 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1210.9 CGO/sec, 4.4/1.9 %(u/s)time, 0.0 %gc (1x), 206 B/96 B (r/w)net
+W231215 15:15:28.428644 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:28.459693 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 102 MiB RSS, 164 goroutines, 26 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1023.9 CGO/sec, 2.5/1.2 %(u/s)time, 0.0 %gc (0x), 66 B/55 B (r/w)net
+W231215 15:15:38.429153 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:38.455925 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 102 MiB RSS, 164 goroutines, 18 MiB/46 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1028.7 CGO/sec, 3.0/1.6 %(u/s)time, 0.0 %gc (1x), 42 B/42 B (r/w)net
+W231215 15:15:48.472927 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:48.533884 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 102 MiB RSS, 165 goroutines, 26 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1068.7 CGO/sec, 3.1/1.7 %(u/s)time, 0.0 %gc (0x), 239 B/151 B (r/w)net
+W231215 15:15:58.468337 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:15:58.499295 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 102 MiB RSS, 165 goroutines, 18 MiB/45 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1032.1 CGO/sec, 3.6/1.4 %(u/s)time, 0.0 %gc (1x), 432 B/399 B (r/w)net
+I231215 15:16:08.315658 121 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W231215 15:16:08.491551 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:16:08.579962 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 103 MiB RSS, 167 goroutines, 25 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1045.3 CGO/sec, 1.9/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/1.7 KiB (r/w)net
+W231215 15:16:18.494691 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:16:18.517977 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 104 MiB RSS, 164 goroutines, 19 MiB/45 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 1241.4 CGO/sec, 3.5/1.6 %(u/s)time, 0.0 %gc (1x), 9.1 KiB/7.8 KiB (r/w)net
+W231215 15:16:28.495828 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:16:28.535718 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 104 MiB RSS, 164 goroutines, 26 MiB/40 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 979.2 CGO/sec, 1.1/1.7 %(u/s)time, 0.0 %gc (0x), 26 KiB/7.2 KiB (r/w)net
+W231215 15:16:38.500188 125 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: Incorrect function.; disk stats will be empty.
+I231215 15:16:38.575640 125 server/status/runtime.go:522 ⋮ [n1] runtime stats: 104 MiB RSS, 165 goroutines, 18 MiB/46 MiB/45 MiB GO alloc/idle/total, 623 KiB/1.3 MiB CGO alloc/total, 991.6 CGO/sec, 3.3/1.1 %(u/s)time, 0.0 %gc (1x), 246 B/161 B (r/w)net
+I231215 15:16:40.200476 1 cli/start.go:733 ⋮ received signal 'interrupt'
+I231215 15:16:40.268312 1 cli/start.go:817 ⋮ initiating graceful shutdown of server
+I231215 15:16:42.033276 3702 server/drain.go:175 ⋮ [server drain process] drain remaining: 3
+I231215 15:16:42.139936 3702 server/drain.go:177 ⋮ [server drain process] drain details: descriptor leases: 2, liveness record: 1
+I231215 15:16:42.865989 3702 server/drain.go:175 ⋮ [server drain process] drain remaining: 0
+I231215 15:16:43.069028 3702 util/stop/stopper.go:563 ⋮ [server drain process] quiescing
+E231215 15:16:43.092917 221 jobs/registry.go:624 ⋮ error expiring job sessions: ‹expire-sessions›: context canceled
+W231215 15:16:43.126054 202 sql/sqlliveness/slinstance/slinstance.go:182 ⋮ [n1] exiting heartbeat loop
+W231215 15:16:43.239526 221 kv/txn.go:618 ⋮ failure aborting transaction: ‹node unavailable; try another peer›; abort caused by: context canceled
+W231215 15:16:43.255352 127 kv/txn.go:618 ⋮ [n1,liveness-hb] failure aborting transaction: ‹node unavailable; try another peer›; abort caused by: ‹failed to send RPC: sending to all replicas failed; last error: node unavailable; try another peer›
+E231215 15:16:43.355486 221 jobs/registry.go:629 ⋮ failed to serve pause and cancel requests: context canceled
+I231215 15:16:43.389919 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (gc): ‹node unavailable; try another peer›
+W231215 15:16:43.409809 127 kv/kvserver/node_liveness.go:650 ⋮ [n1,liveness-hb] failed node liveness heartbeat: ‹failed to send RPC: sending to all replicas failed; last error: node unavailable; try another peer›
+(1) ‹failed to send RPC: sending to all replicas failed; last error: node unavailable; try another peer›
+Error types: (1) *roachpb.internalError
+
+An inability to maintain liveness will prevent a node from participating in a
+cluster. If this problem persists, it may be a sign of resource starvation or
+of network connectivity problems. For help troubleshooting, visit:
+
+    https://www.cockroachlabs.com/docs/stable/cluster-setup-troubleshooting.html#node-liveness-issues
+
+W231215 15:16:43.471973 221 jobs/registry.go:672 ⋮ canceling all adopted jobs due to stopper quiescing
+I231215 15:16:43.529382 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (merge): ‹node unavailable; try another peer›
+I231215 15:16:43.603254 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (split): ‹node unavailable; try another peer›
+I231215 15:16:43.627825 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (replicate): ‹node unavailable; try another peer›
+I231215 15:16:43.657012 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (replicaGC): ‹node unavailable; try another peer›
+I231215 15:16:43.706706 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (raftlog): ‹node unavailable; try another peer›
+I231215 15:16:43.734990 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (raftsnapshot): ‹node unavailable; try another peer›
+I231215 15:16:43.759611 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (consistencyChecker): ‹node unavailable; try another peer›
+I231215 15:16:43.787876 186 kv/kvserver/queue.go:582 ⋮ [n1,s1] rate limited in MaybeAdd (timeSeriesMaintenance): ‹node unavailable; try another peer›
+I231215 15:16:44.097368 1 cli/start.go:869 ⋮ server drained and shutdown completed
+E231215 15:16:44.228404 1 cli/error.go:398 ⋮ ‹ERROR: interrupted›
