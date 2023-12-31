@@ -23,7 +23,7 @@ func run() error {
 	//The flag creation for the address
 	var addr string
 	fs := flag.NewFlagSet("lain", flag.ExitOnError)
-	fs.StringVar(&addr, "addr", ":8080", "HTTP service address")
+	fs.StringVar(&addr, "addr", ":4000", "HTTP service address")
 	if err := fs.Parse(os.Args[1:]); err != nil {
 		return fmt.Errorf("parse flags %w", err)
 	}
