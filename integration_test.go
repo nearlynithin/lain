@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ory/dockertest"
+	"github.com/ory/dockertest/v3"
 )
 
 var testQueries *Queries
@@ -67,7 +67,7 @@ func setupDB(cockroach *dockertest.Resource, retry func(op func() error) error) 
 	var db *sql.DB
 	return db, retry(func() (err error) {
 		hostPort := cockroach.GetHostPort("26257/tcp")
-		db, err = sql.Open("postgres", "postgresql://root@"+hostPort+"/defaultdb?sslmode=disable")
+		db, err = sql.Open("postgres", "postgresql://root@"+hostPort+"?sslmode=disable")
 		if err != nil {
 			return err
 		}

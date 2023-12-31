@@ -5,13 +5,20 @@ package lain
 import (
 	"context"
 	"errors"
+	"regexp"
 
+	_ "github.com/lib/pq"
 	"github.com/rs/xid"
 )
 
 var (
 	ErrUserNotFound  = errors.New("user not found")
 	ErrUsernameTaken = errors.New("username taken")
+	ErrInvalidEmail  = errors.New("invalid email")
+)
+
+var (
+	reEmail = regexp.MustCompile(`^\d{2}[a-zA-Z]\d{2}\.\w+@sjec\.ac\.in$`)
 )
 
 //making a login function that is a part of the service
@@ -21,8 +28,20 @@ type LoginInput struct {
 	Username *string
 }
 
+// using regex for email validation
+func (in LoginInput) Validate() error {
+	if !isEmail(in.Email) {
+		return ErrInvalidEmail
+	}
+	return nil
+}
+
 func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 	var out User
+
+	if err := in.Validate(); err != nil {
+		return out, err
+	}
 
 	exists, err := svc.Queries.UserExistsByEmail(ctx, in.Email)
 
@@ -66,6 +85,10 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 		CreatedAt: createdAt,
 		UpdatedAt: createdAt,
 	}, nil
+}
+
+func isEmail(s string) bool {
+	return reEmail.MatchString(s)
 }
 
 // So now the login method is done, It can be used by the handler now
