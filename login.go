@@ -6,19 +6,22 @@ import (
 	"context"
 	"errors"
 	"regexp"
+	"strings"
 
 	_ "github.com/lib/pq"
 	"github.com/rs/xid"
 )
 
 var (
-	ErrUserNotFound  = errors.New("user not found")
-	ErrUsernameTaken = errors.New("username taken")
-	ErrInvalidEmail  = errors.New("invalid email")
+	ErrUserNotFound    = errors.New("user not found")
+	ErrUsernameTaken   = errors.New("username taken")
+	ErrInvalidEmail    = errors.New("invalid email")
+	ErrInvalidUsername = errors.New("invalid username")
 )
 
 var (
-	reEmail = regexp.MustCompile(`^\d{2}[a-zA-Z]\d{2}\.\w+@sjec\.ac\.in$`)
+	reEmail    = regexp.MustCompile(`^\d{2}[a-zA-Z]\d{2}\.\w+@sjec\.ac\.in$`)
+	reUsername = regexp.MustCompile(`^[a-zA-Z][a-zA-Z0-9_-]{0,17}`)
 )
 
 //making a login function that is a part of the service
@@ -28,16 +31,27 @@ type LoginInput struct {
 	Username *string
 }
 
+func (in *LoginInput) Prepare() {
+	in.Email = strings.ToLower(in.Email)
+}
+
 // using regex for email validation
 func (in LoginInput) Validate() error {
 	if !isEmail(in.Email) {
 		return ErrInvalidEmail
 	}
+
+	if in.Username != nil && !isUsername(*in.Username) {
+		return ErrInvalidUsername
+	}
+
 	return nil
 }
 
 func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 	var out User
+
+	in.Prepare()
 
 	if err := in.Validate(); err != nil {
 		return out, err
@@ -89,6 +103,9 @@ func (svc *Service) Login(ctx context.Context, in LoginInput) (User, error) {
 
 func isEmail(s string) bool {
 	return reEmail.MatchString(s)
+}
+func isUsername(s string) bool {
+	return reUsername.MatchString(s)
 }
 
 // So now the login method is done, It can be used by the handler now
