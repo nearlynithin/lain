@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/nicolasparada/go-errs/httperrs"
 	"lain.sceptix.net"
 )
 
@@ -30,8 +31,7 @@ func (h *Handler) showLogin(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
 	//first we pass the form we et from login page tmpl
 	if err := r.ParseForm(); err != nil {
-		http.Error(w, "bad request", http.StatusBadRequest)
-		return
+		h.renderLogin(w, loginData{Err: errors.New("bad request")}, http.StatusBadRequest)
 	}
 
 	ctx := r.Context()
@@ -41,16 +41,12 @@ func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	user, err := h.Service.Login(ctx, input)
-	if errors.Is(err, lain.ErrUserNotFound) || errors.Is(err, lain.ErrUsernameTaken) {
+	if err != nil {
+		h.log(err)
 		h.renderLogin(w, loginData{
 			Form: r.PostForm,
-			Err:  err,
-		}, http.StatusBadRequest)
-		return
-	}
-	if err != nil {
-		h.Logger.Printf("could not login: %v\n", err)
-		http.Error(w, "internal server error", http.StatusInternalServerError)
+			Err:  maskErr(err),
+		}, httperrs.Code(err))
 		return
 	}
 
@@ -58,6 +54,19 @@ func (h *Handler) login(w http.ResponseWriter, r *http.Request) {
 	h.session.Put(r, "user", user)
 	//redirecting back to the homepage
 	http.Redirect(w, r, "/", http.StatusFound)
+}
+
+func (h *Handler) log(err error) {
+	if httperrs.IsInternalServerError(err) {
+		_ = h.Logger.Output(2, err.Error())
+	}
+}
+
+func maskErr(err error) error {
+	if httperrs.IsInternalServerError(err) {
+		return errors.New("internal server error")
+	}
+	return err
 }
 
 func (h *Handler) logout(w http.ResponseWriter, r *http.Request) {
