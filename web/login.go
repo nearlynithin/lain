@@ -82,3 +82,23 @@ func formPtr(form url.Values, key string) *string {
 	s := form.Get(key)
 	return &s
 }
+
+// Middleware
+func (h *Handler) withUser(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !h.session.Exists(r, "user") {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		usr, ok := h.session.Get(r, "user").(lain.User)
+		if !ok {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		ctx := r.Context()
+		ctx = lain.ContextWithUser(ctx, usr)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
+}
