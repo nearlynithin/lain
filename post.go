@@ -2,11 +2,20 @@ package lain
 
 import (
 	"context"
+	"database/sql"
+	"errors"
 	"strings"
 	"time"
 	"unicode/utf8"
 
 	"github.com/nicolasparada/go-errs"
+	"github.com/rs/xid"
+)
+
+const (
+	ErrInvalidPostID      = errs.InvalidArgumentError("invalid post ID")
+	ErrInvalidPostContent = errs.InvalidArgumentError("invalid post content")
+	ErrPostNotFound       = errs.NotFoundError("post not found")
 )
 
 type CreatePostInput struct {
@@ -25,7 +34,7 @@ func (in *CreatePostInput) Prepare() {
 func (in CreatePostInput) Validate() error {
 	//making sure that the content is not empty and it's not less than maybe a 1000 characters.
 	if in.Content == "" || utf8.RuneCountInString(in.Content) > 1000 {
-		return errs.InvalidArgumentError("invalid post content")
+		return ErrInvalidPostContent
 	}
 	return nil
 }
@@ -62,4 +71,27 @@ func (svc *Service) CreatePost(ctx context.Context, in CreatePostInput) (CreateP
 	out.CreateAt = createdAt
 
 	return out, nil
+}
+
+func (svc *Service) Posts(ctx context.Context) ([]PostsRow, error) {
+	return svc.Queries.Posts(ctx)
+}
+
+func (svc *Service) Post(ctx context.Context, postID string) (PostRow, error) {
+	if !isID(postID) {
+		return PostRow{}, ErrInvalidPostID
+	}
+
+	p, err := svc.Queries.Post(ctx, postID)
+	if errors.Is(err, sql.ErrNoRows) {
+		return PostRow{}, ErrPostNotFound
+	}
+
+	return p, err
+}
+
+// to validate the post id
+func isID(s string) bool {
+	_, err := xid.FromString(s)
+	return err == nil
 }

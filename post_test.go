@@ -58,3 +58,32 @@ func genUser(t *testing.T) User {
 		UpdatedAt: createdAt,
 	}
 }
+
+func TestService_Posts(t *testing.T) {
+	svc := &Service{Queries: testQueries}
+	ctx := context.Background()
+
+	t.Run("ok", func(t *testing.T) {
+		got, err := svc.Posts(ctx)
+		assert.NoError(t, err)
+		for _, p := range got {
+			assert.NotZero(t, p)
+		}
+	})
+}
+
+func TestService_Post(t *testing.T) {
+	svc := &Service{Queries: testQueries}
+	ctx := context.Background()
+
+	t.Run("invalid_id", func(t *testing.T) {
+		_, err := svc.Post(ctx, "@nope@")
+		assert.EqualError(t, err, "invalid post ID")
+	})
+
+	t.Run("not_found", func(t *testing.T) {
+		_, err := svc.Post(ctx, genID())
+		assert.EqualError(t, err, "post not found")
+	})
+
+}

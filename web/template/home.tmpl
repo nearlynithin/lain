@@ -27,6 +27,10 @@
         <button>Post</button>
     </form>
     {{end}}
+
+    {{range .Posts}}
+    {{template "post-article.tmpl".}}
+    {{end}}
 </main>
 
 {{end}}

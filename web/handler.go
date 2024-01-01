@@ -1,7 +1,9 @@
 package web
 
 import (
+	"embed"
 	"encoding/gob"
+	"io/fs"
 	"log"
 	"net/http"
 	"net/url"
@@ -11,6 +13,9 @@ import (
 	"github.com/nicolasparada/go-mux"
 	"lain.sceptix.net"
 )
+
+//go:embed all:static
+var staticFS embed.FS
 
 type Handler struct {
 	Logger     *log.Logger
@@ -42,6 +47,10 @@ func (h *Handler) init() {
 		http.MethodPost: h.createPost,
 	})
 
+	r.Handle("/*", mux.MethodHandler{
+		http.MethodGet: h.static(),
+	})
+
 	gob.Register(lain.User{})
 	gob.Register(url.Values{})
 	h.session = sessions.New(h.SessionKey)
@@ -56,4 +65,12 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	//calling init only once
 	h.once.Do(h.init)
 	h.handler.ServeHTTP(w, r)
+}
+
+func (h *Handler) static() http.HandlerFunc {
+	sub, err := fs.Sub(staticFS, "static")
+	if err != nil {
+		panic(err)
+	}
+	return http.FileServer(http.FS(sub)).ServeHTTP
 }
