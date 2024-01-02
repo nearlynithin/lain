@@ -1,13 +1,24 @@
 /* styles.css */
 
 body {
+    font-family: 'Courier New', monospace;
+    margin: 10%;
+    position: relative; /* Make the body a positioning context for the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('serial-experiments-lain-8wdbo9ohnyh74g0i.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Keep the background fixed */
-    font-family: 'Courier New', monospace;
-    margin: 10%;
+    filter: blur(5px); /* Adjust the pixel value based on your desired blur amount */
+    z-index: -1; /* Place the pseudo-element behind the content */
 }
 
 main {
