@@ -1,0 +1,19 @@
+<article>
+    <div>
+        <a href="#!">
+            <h2>{{.Username}}</h2>
+        </a>
+        <a href="#!">
+            <time-ago>
+                <time datetime="{{.CreatedAt}}">{{.CreatedAt}}</time>
+            </time-ago>
+        </a>
+    </div>
+
+    <p>{{ .Content}}</p>
+</article>
+
+
+{{define "head"}}
+<script src="/time-ago.js" async></script>
+{{end}}
