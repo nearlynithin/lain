@@ -6,10 +6,12 @@
     <h1>Home</h1>
 
     {{if .Session.IsLoggedIn}}
-    <p>Welcome Back, {{.Session.User.Username}}.</p>  
-    <form action ="/logout" method="POST" style="display: contents;">
-        <button>Logout</button>    
-    </form>
+    <div class="welcome">
+        <p>Welcome Back, {{.Session.User.Username}}.</p>
+        <form action="/logout" method="POST" style="display: contents;">
+            <button>Logout</button>
+        </form>
+    </div>
     {{else}}
     <p>You are not Logged in.</p>
     <a href="/login">Login</a>
