@@ -13,7 +13,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: darkblue;
+    background-color: rgb(23, 23, 37);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,3 +122,4 @@ a:hover{
 #heading{
      font-size: 120px;
      font-family: 'Ballet', cursive;
+}
