@@ -64,6 +64,16 @@ func (svc *Service) CreateComment(ctx context.Context, in CreateCommentInput) (C
 	if err != nil {
 		return out, err
 	}
+	//increasing the total comment count here
+	_, err = svc.Queries.UpdatePost(ctx, UpdatePostParams{
+		PostID:                  in.PostID,
+		IncreaseCommentsCountBy: 1,
+	})
+
+	if err != nil {
+		return out, err
+	}
+
 	out.ID = commentID
 	out.CreatedAt = createdAt
 
