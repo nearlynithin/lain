@@ -9,11 +9,13 @@ import (
 var errTmpl = parseTmpl("err.tmpl")
 
 type errData struct {
+	Session
 	Err error
 }
 
-func (h *Handler) renderErr(w http.ResponseWriter, err error) {
+func (h *Handler) renderErr(w http.ResponseWriter, r *http.Request, err error) {
 	h.renderTmpl(w, errTmpl, errData{
-		Err: maskErr(err),
+		Session: h.sessionFromReq(r),
+		Err:     maskErr(err),
 	}, httperrs.Code(err))
 }

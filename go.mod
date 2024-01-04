@@ -42,4 +42,5 @@ require (
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/tools v0.16.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
+	mvdan.cc/xurls/v2 v2.5.0 // indirect
 )
