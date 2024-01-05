@@ -93,3 +93,12 @@ header {
      padding-right: 100px;
      height: 20px; 
 }
+footer {
+    background-color: #333; /* Set background color */
+    color: #fff; /* Set text color */
+    padding: 20px; /* Adjust padding as needed */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 300px;
+}
