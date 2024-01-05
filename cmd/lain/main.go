@@ -33,7 +33,7 @@ func run() error {
 
 	fs := flag.NewFlagSet("lain", flag.ExitOnError)
 	fs.StringVar(&addr, "addr", ":4000", "HTTP service address")
-	fs.StringVar(&sqlAddr, "sql-addr", "postgresql://root@PenPen:26257/defaultdb?sslmode=disable", "SQL address")
+	fs.StringVar(&sqlAddr, "sql-addr", "postgresql://root@DESKTOP-LEULBHT:26257/defaultdb?sslmode=disable", "SQL address")
 	fs.StringVar(&sessionKey, "session-key", "secretkeyyoushouldnotcommit", "Session Key")
 	if err := fs.Parse(os.Args[1:]); err != nil {
 		return fmt.Errorf("parse flags %w", err)
