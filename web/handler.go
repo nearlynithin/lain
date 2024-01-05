@@ -60,6 +60,10 @@ func (h *Handler) init() {
 		http.MethodGet: h.showUser,
 	})
 
+	r.Handle("/user-follows", mux.MethodHandler{
+		http.MethodPost: h.followUser,
+	})
+
 	r.Handle("/*", mux.MethodHandler{
 		http.MethodGet: h.static(),
 	})
