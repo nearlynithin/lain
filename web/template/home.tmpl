@@ -1,19 +1,24 @@
-{{template "layout.tmpl".}}
+{{template "layout.tmpl" .}}
 
 {{define "content"}}
-
 <main>
     <h1>Home</h1>
 
     {{if .Session.IsLoggedIn}}
-    <p>Welcome Back, {{.Session.User.Username}}.</p>  
-    <form action ="/logout" method="POST" style="display: contents;">
-        <button>Logout</button>    
+    <form action="/posts" method="POST">
+        <textarea name="content" aria-label="content" placeholder="Write something..." rows="3" required>
+            {{- .CreatePostForm.Get "content" -}}
+        </textarea>
+        {{with .CreatePostErr}}
+        <p>Could not create post: <code>{{.Error}}</code></p>
+        {{end}}
+
+        <button>Post</button>
     </form>
-    {{else}}
-    <p>You are not Logged in.</p>
-    <a href="/login">Login</a>
+    {{end}}
+
+    {{range .Posts}}
+    {{template "post-article.tmpl" .}}
     {{end}}
 </main>
-
 {{end}}

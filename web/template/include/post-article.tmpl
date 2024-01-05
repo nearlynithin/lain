@@ -1,0 +1,28 @@
+<article class="post-card">
+    <div class="post-header">
+        <a href="/@{{.Username}}">
+            <h2 style="display: inline;">{{.Username}}</h2>
+        </a>
+        <a href="/p/{{.ID}}">
+            <time-ago>
+                <time datetime='{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}'>
+                    {{- .CreatedAt.Format "02 Jan 06 15:04 MST" -}}
+                </time>
+            </time-ago>
+        </a>
+    </div>
+    <div class="post-content">
+        <p>{{linkify .Content}}</p>
+    </div>
+    <div class="post-footer">
+        <a href="/p/{{.ID}}" title="{{.CommentsCount}} comments">
+            <span>💬</span>{{.CommentsCount}}
+        </a>
+    </div>
+</article>
+
+{{define "head"}}
+<link rel="stylesheet" href="styles.css">
+<script src="/time-ago.js" async></script>
+
+{{end}}

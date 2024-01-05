@@ -4,19 +4,19 @@ package lain
 
 import (
 	"context"
-	"errors"
 	"regexp"
 	"strings"
 
 	_ "github.com/lib/pq"
+	"github.com/nicolasparada/go-errs"
 	"github.com/rs/xid"
 )
 
-var (
-	ErrUserNotFound    = errors.New("user not found")
-	ErrUsernameTaken   = errors.New("username taken")
-	ErrInvalidEmail    = errors.New("invalid email")
-	ErrInvalidUsername = errors.New("invalid username")
+const (
+	ErrUserNotFound    = errs.NotFoundError("user not found")
+	ErrUsernameTaken   = errs.ConflictError("username taken")
+	ErrInvalidEmail    = errs.InvalidArgumentError("invalid email")
+	ErrInvalidUsername = errs.InvalidArgumentError("invalid username")
 )
 
 var (

@@ -7,7 +7,6 @@ import (
 	"os"
 	"testing"
 
-	_ "github.com/lib/pq"
 	"github.com/ory/dockertest/v3"
 )
 
