@@ -1,6 +1,6 @@
 <header>
     <nav id="nave">
-        <a id="Home" href="/">HOME</a>
+       <a id="Home" href="/">HOME</a>
         {{if .Session.IsLoggedIn}}
         <a href="#!">{{.Session.User.Username}}</a>
         <form action="/logout" method="POST" style="display: contents;">

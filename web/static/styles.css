@@ -3,14 +3,19 @@
     padding:0;
 }
 body{
-    background-color: black;
-}
+    margin: 0;
+    padding: 0;
+    background-image: url('misty-landscape-with-fog-pine-forest-mountain-slopes-illustration-nature-scene_1150-37301.webp'); /* Replace 'your-image.jpg' with your actual image URL */
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
 .login-container {
     margin: auto;
     width: 300px;
     padding: 20px;
-    color: white;
-    background-color: rgb(73, 71, 71) ;
+    color: black;
+    background-color:rgb(255, 255, 255,0.5);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding-bottom: 2%;
@@ -38,13 +43,12 @@ button {
     border-radius: 3px;
     cursor: pointer;
 }
-header {
-    background-color: black;
+header{
     margin-bottom:5px;
 }
 
 #headlain {
-    color: white;
+    color: whitesmoke;
     font-size:75px;
     margin-left:45%;
     font-family: 'Fjalla One', sans-serif;
@@ -55,7 +59,6 @@ header {
 }
 #nave{
     padding: 25px;
-    background-color: white;
 }
 #login {
     text-decoration: none;
@@ -67,38 +70,42 @@ header {
 }
 #Home{
     text-decoration: none;
-    background-color: black;
+    background-color: #22d0a7;
     color: white;
     padding: 10px;
     border: 1px solid white;
+    box-shadow: #2EE6BB 2px;
 }
 
 #email {
     border: none;
-     border-bottom:1px solid white ; 
+     border-bottom:1px solid black ; 
      outline: none;
      overflow: visible;
      background: none;
-     color:white;
+     color:black;
      padding-right:100px;
     height: 20px;
+    opacity: 1;
+    font-size: medium;
 }
 #username {
     border: none;
-     border-bottom:1px solid white ; 
+     border-bottom:1px solid black ; 
      outline: none;
      overflow: visible;
      background: none;
-     color:white;
+     color:black;
      padding-right: 100px;
      height: 20px; 
+     opacity: 1;
+     font-size: medium;
 }
 footer {
-    background-color: #333; /* Set background color */
     color: #fff; /* Set text color */
-    padding: 20px; /* Adjust padding as needed */
+    padding: 80px; /* Adjust padding as needed */
     bottom: 0;
     width: 100%;
     text-align: center;
-    margin-top: 300px;
+    margin-top: 280px;
 }
