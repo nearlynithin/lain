@@ -64,7 +64,7 @@ func TestService_Posts(t *testing.T) {
 	ctx := context.Background()
 
 	t.Run("ok", func(t *testing.T) {
-		got, err := svc.Posts(ctx)
+		got, err := svc.Posts(ctx, "")
 		assert.NoError(t, err)
 		for _, p := range got {
 			assert.NotZero(t, p)

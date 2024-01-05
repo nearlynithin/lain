@@ -22,10 +22,10 @@ func (h *Handler) renderHome(w http.ResponseWriter, data homeData, statusCode in
 
 func (h *Handler) showHome(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
-	pp, err := h.Service.Posts(ctx)
+	pp, err := h.Service.Posts(ctx, "")
 	if err != nil {
 		h.log(err)
-		h.renderErr(w, err)
+		h.renderErr(w, r, err)
 		return
 	}
 
