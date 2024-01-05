@@ -1,3 +1,7 @@
+*{
+    margin:0;
+    padding:0;
+}
 body{
     background-color: black;
 }
@@ -6,12 +10,10 @@ body{
     width: 300px;
     padding: 20px;
     color: white;
-    background-color: transparent ;
+    background-color: rgb(73, 71, 71) ;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-top: 200px;
-
- 
+    padding-bottom: 2%;
 }
 
 form {
@@ -36,6 +38,58 @@ button {
     border-radius: 3px;
     cursor: pointer;
 }
-.heading {
+header {
+    background-color: black;
+    margin-bottom:5px;
+}
+
+#headlain {
     color: white;
+    font-size:75px;
+    margin-left:45%;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top:15%;
+    margin-bottom:0%;
+    margin-right: 0%;
+
+}
+#nave{
+    padding: 25px;
+    background-color: white;
+}
+#login {
+    text-decoration: none;
+    margin-left: 90%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid 
+}
+#Home{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+#email {
+    border: none;
+     border-bottom:1px solid white ; 
+     outline: none;
+     overflow: visible;
+     background: none;
+     color:white;
+     padding-right:100px;
+    height: 20px;
+}
+#username {
+    border: none;
+     border-bottom:1px solid white ; 
+     outline: none;
+     overflow: visible;
+     background: none;
+     color:white;
+     padding-right: 100px;
+     height: 20px; 
 }

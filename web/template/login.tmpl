@@ -2,21 +2,21 @@
 
  {{define "content"}}
  <main>
+    <h1 id="headlain">Lain.</h1>
     <div class="login-container">
-     <h1>Login</h1>
             <form action="/login" method ="POST">
                 <div>
-                    <label for="email"> Email </label>
+                    <label for="email"> Email </label> <div class="user-mail">
                     <input type ="email" name="email" id ="email" placeholder="example@sjec.ac.in" value='{{.Form.Get "email"}}' 
-                    required>
+                    required> </div>
                 </div>
 
                 {{ with .Err}}
                 {{if or (eq .Error "user not found") (eq .Error "username taken") (eq .Error "invalid username")}}
                 <div>
-                    <label for="username">Username</label>
+                    <label for="username">Username</label> <div class="user-mail">
                     <input type ="text" name="username" id ="username" placeholder ="yourname" value='{{$.Form.Get "username"}}' 
-                    required>
+                    required></div>
                 </div>
                 {{end}}
                 {{end}}
