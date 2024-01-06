@@ -22,7 +22,7 @@
                 {{with .Err}}
                 <p id="could-not-login">Could not login : {{.Error}}</code></p>
                 {{end}}
-                <button id="LOGIN">LOGIN</button>
+                <button id="LOGIN">{{if.Err}}CREATE ACCOUNT {{else}}LOGIN{{end}}</button>
             </form>
         </div>   
 </main>
