@@ -10,7 +10,6 @@
                     <input type ="email" name="email" id ="email" placeholder="EXAMPLE@SJEC.AC.IN" value='{{.Form.Get "email"}}' 
                     required></div>
                 </div>
-
                 {{ with .Err}}
                 {{if or (eq .Error "user not found") (eq .Error "username taken") (eq .Error "invalid username")}}
                 <div><span id="icon-user"><ion-icon name="person" style="font-size: 22px;" id="icon-user"></ion-icon>

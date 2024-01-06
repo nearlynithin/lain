@@ -49,6 +49,9 @@ input {
 #LOGIN:active{
     color: white;
 }
+#LOGIN::after{
+    overflow: hidden;
+}
 header{
     margin-bottom:5px;
 }
