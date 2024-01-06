@@ -5,7 +5,7 @@
     <h1 id="headlain">Lain.</h1>
     <div class="login-container">
             <form action="/login" method ="POST">
-                <div><span id="icon"><ion-icon name="mail" style="font-size: 25px; " id="icon"></ion-icon>
+                <div><span id="icon"><ion-icon name="mail" style="font-size: 22px; " id="icon"></ion-icon>
                     <label for="email" id="EMAIL"> EMAIL </label><div class="user-mail"></span>
                     <input type ="email" name="email" id ="email" placeholder="EXAMPLE@SJEC.AC.IN" value='{{.Form.Get "email"}}' 
                     required></div>
@@ -13,18 +13,16 @@
 
                 {{ with .Err}}
                 {{if or (eq .Error "user not found") (eq .Error "username taken") (eq .Error "invalid username")}}
-                <div>
-                    <label for="username" id="USERNAME">USERNAME</label> <div class="user-mail">
+                <div><span id="icon-user"><ion-icon name="person" style="font-size: 22px;" id="icon-user"></ion-icon>
+                    <label for="username" id="USERNAME">USERNAME</label> <div class="user-mail"></span>
                     <input type ="text" name="username" id ="username" placeholder ="NAME" value='{{$.Form.Get "username"}}' 
                     required></div>
                 </div>
                 {{end}}
                 {{end}}
-
                 {{with .Err}}
-                <p id="could-not-login">Could not login : <code>{{.Error}}</code></p>
+                <p id="could-not-login">Could not login : {{.Error}}</code></p>
                 {{end}}
-
                 <button id="LOGIN">LOGIN</button>
             </form>
         </div>   

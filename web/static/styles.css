@@ -17,8 +17,8 @@ body{
     color: black;
     background-color:rgb(255, 255, 255,0.5);
    
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #065454;
     padding-bottom: 3%;
 }
 
@@ -39,7 +39,7 @@ input {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 5px;
-    box-shadow: 3px 3px black;
+    box-shadow: 3px 3px #0d424a;
 }
 #LOGIN:hover{
     color: black;
@@ -77,13 +77,13 @@ header{
     box-shadow: 3px 3px white;
 }
 #login:hover{
-    color: black;
+    color: #065454;
     font-weight: bold;
-   box-shadow: 4px 4px black;
-   background-color: #47e6db;
+   box-shadow: 2px 2px black;
+   background-color: white;
 }
 #login:active{
-        color: azure;
+        color: black;
 }
 #Home{
     text-decoration: none;
@@ -95,12 +95,12 @@ header{
     box-shadow: 3px 3px white;
 }
 #Home:hover{
-   color: black;
-   box-shadow: 4px 4px black;
-   background-color:#47e6db;
+   color:#065454 ;
+   box-shadow: 2px 2px black;
+   background-color:white;
 }
 #Home:active{
-    color: azure;
+    color: black;
 }
 
 #email {
@@ -132,14 +132,43 @@ header{
 #could-not-login{
        padding-top:5px;
        padding-bottom: 8px;
-       color: red;
+       color: rgb(34, 30, 80);
        font-size: large;
+       
 }
 footer {
     background-color: rgb(255, 255, 255,0.7);
+    background-attachment: fixed;
     padding: 100px; 
     bottom: 0;
     width: 100%;
     text-align: center;
-    margin-top: 280px;
+    margin-top: 37%;
+    left: 0;
+
+
+}
+#icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; 
+}
+
+.user-mail {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#EMAIL {
+    display: inline-block;
+    vertical-align: middle;
+}
+#icon-user {
+    vertical-align: middle;
+}
+
+#USERNAME {
+    display: inline-block; 
+    vertical-align: middle;
+    margin-left: 10px; 
 }
