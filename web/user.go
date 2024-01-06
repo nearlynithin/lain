@@ -12,7 +12,7 @@ var userTmpl = parseTmpl("user.tmpl")
 
 type userData struct {
 	Session
-	User          lain.User
+	User          lain.UserByUsernameRow
 	Posts         []lain.PostsRow
 	UserFollowErr error
 }
