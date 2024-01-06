@@ -67,14 +67,28 @@ func (svc *Service) CreatePost(ctx context.Context, in CreatePostInput) (CreateP
 		return out, err
 	}
 
+	_, err = svc.Queries.UpdateUser(ctx, UpdateUserParams{
+		UserID:               usr.ID,
+		IncreasePostsCountBy: 1,
+	})
+
+	if err != nil {
+		return out, err
+	}
+
 	out.ID = postID
 	out.CreateAt = createdAt
 
 	return out, nil
 }
 
-func (svc *Service) Posts(ctx context.Context) ([]PostsRow, error) {
-	return svc.Queries.Posts(ctx)
+func (svc *Service) Posts(ctx context.Context, username string) ([]PostsRow, error) {
+	if username != "" && !isUsername(username) {
+		return nil, ErrInvalidUsername
+	}
+	//basically, if username is empty = All posts are returned (thereby showing home page)
+	//and if username is given, It returns just the posts belonging to the user, thereby helping in user-search
+	return svc.Queries.Posts(ctx, username)
 }
 
 func (svc *Service) Post(ctx context.Context, postID string) (PostRow, error) {

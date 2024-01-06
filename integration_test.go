@@ -66,8 +66,8 @@ func setupCockroach(pool *dockertest.Pool) (*dockertest.Resource, error) {
 func setupDB(cockroach *dockertest.Resource, retry func(op func() error) error) (*sql.DB, error) {
 	var db *sql.DB
 	return db, retry(func() (err error) {
-		hostPort := cockroach.GetHostPort("LAPTOP-NRLHIHL1:26257/tcp")
-		db, err = sql.Open("postgres", "postgresql://root@"+hostPort+"/defaultdb/defaultdb?sslmode=disable")
+		hostPort := cockroach.GetHostPort("@LAPTOP-NRLHIHL1:26257")
+		db, err = sql.Open("postgres", "postgresql://root@"+hostPort+"/defaultdb?sslmode=disable")
 		if err != nil {
 			return err
 		}
