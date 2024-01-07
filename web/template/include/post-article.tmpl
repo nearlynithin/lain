@@ -3,7 +3,7 @@
         <a href="/@{{.Username}}">
             <h2 style="display: inline;">{{.Username}}</h2>
         </a>
-        <a href="/p/{{.ID}}">
+         <a href="/p/{{.ID}}" style="text-decoration: none;">
             <time-ago>
                 <time datetime='{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}'>
                     {{- .CreatedAt.Format "02 Jan 06 15:04 MST" -}}
@@ -22,7 +22,5 @@
 </article>
 
 {{define "head"}}
-<link rel="stylesheet" href="styles.css">
-<script src="/time-ago.js" async></script>
-
+<script src="time-ago.js" async></script>
 {{end}}
