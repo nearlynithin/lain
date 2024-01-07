@@ -17,6 +17,7 @@ const (
 	ErrUsernameTaken   = errs.ConflictError("username taken")
 	ErrInvalidEmail    = errs.InvalidArgumentError("invalid email")
 	ErrInvalidUsername = errs.InvalidArgumentError("invalid username")
+	ErrInvalidUserID   = errs.InvalidArgumentError("invalid user ID")
 )
 
 var (

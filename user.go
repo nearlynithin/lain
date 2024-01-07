@@ -6,15 +6,19 @@ import (
 	"errors"
 )
 
-func (svc *Service) UserByUsername(ctx context.Context, username string) (User, error) {
+func (svc *Service) UserByUsername(ctx context.Context, username string) (UserByUsernameRow, error) {
+	var out UserByUsernameRow
 	if !isUsername(username) {
-		return User{}, ErrInvalidUsername
+		return out, ErrInvalidUsername
 	}
+	usr, _ := UserFromContext(ctx)
 
-	usr, err := svc.Queries.UserByUsername(ctx, username)
+	out, err := svc.Queries.UserByUsername(ctx, UserByUsernameParams{
+		FollowerID: usr.ID,
+		Username:   username,
+	})
 	if errors.Is(err, sql.ErrNoRows) {
-		return User{}, ErrUserNotFound
+		return out, ErrUserNotFound
 	}
-
-	return usr, err
+	return out, err
 }
