@@ -12,8 +12,9 @@ var userTmpl = parseTmpl("user.tmpl")
 
 type userData struct {
 	Session
-	User  lain.User
-	Posts []lain.PostsRow
+	User          lain.UserByUsernameRow
+	Posts         []lain.PostsRow
+	UserFollowErr error
 }
 
 // a function to render this template
@@ -43,9 +44,10 @@ func (h *Handler) showUser(w http.ResponseWriter, r *http.Request) {
 
 	//calling the posts renderer defined above
 	h.renderUser(w, userData{
-		Session: h.sessionFromReq(r),
-		User:    usr,
-		Posts:   pp,
+		Session:       h.sessionFromReq(r),
+		User:          usr,
+		Posts:         pp,
+		UserFollowErr: h.popErr(r, "user_follow_err"),
 	}, http.StatusOK)
 
 }
