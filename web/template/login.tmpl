@@ -7,7 +7,7 @@
             <form action="/login" method ="POST">
                 <div><span id="icon"><ion-icon name="mail" style="font-size: 22px; " id="icon"></ion-icon>
                     <label for="email" id="EMAIL"> EMAIL </label><div class="user-mail"></span>
-                    <input type ="email" name="email" id ="email" placeholder="EXAMPLE@SJEC.AC.IN" value='{{.Form.Get "email"}}' 
+                    <input type ="email" name="email" id ="email" placeholder="EXAMPLE@SJEC.AC.IN" size="20" value='{{.Form.Get "email"}}' 
                     required></div>
                 </div>
                 {{ with .Err}}
