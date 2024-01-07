@@ -144,7 +144,7 @@ footer {
     background-attachment: fixed; 
     bottom: 0;
     width: 100%;
-    margin-top:35% ;
+    margin-top:40% ;
     left: 0;
     box-shadow:2px 2px 2px #065454 inset;
 
@@ -295,22 +295,92 @@ footer {
 }
 
 #createPostBtn {
-    background-color: #ffffff;
-    color: #0d424a;
+    background: rgb(48,255,125);
+    background: linear-gradient(90deg, rgba(48,255,125,1) 0%, rgba(58,255,141,1) 23%, rgba(127,255,248,1) 79%);
+    color:black;
     padding: 10px 15px;
-    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
     cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 4px 4px 5px black;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+#createPostBtn:active{
+    box-shadow: none;
+    color: white;
+}
 .create-post-form textarea {
     width: 100%;
 }
-
-.create-post-form button {
-    background-color: #2ecc71;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
+#postbtn{
+    background: rgb(48,255,125);
+    background: linear-gradient(90deg, rgba(48,255,125,1) 0%, rgba(58,255,141,1) 23%, rgba(127,255,248,1) 79%);
+    color:black;
+    padding:10px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border: 1px solid black;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 4px 4px 5px black;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
 }
-
+#postbtn:active{
+    box-shadow: none;
+    color: white;
+}
+#logout{
+    text-decoration: none;
+    margin-left: 81%;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: white 2px;
+    box-shadow: 3px 3px white;
+    background-color: transparent;
+}
+#logout:hover{
+    color: #065454;
+    font-weight: bold;
+   box-shadow: 2px 2px black;
+   background-color: white;
+}
+#logout:active{
+        color: black;
+}
+#session-username{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: white 2px;
+    box-shadow: 3px 3px white;
+    background-color: transparent;
+    margin-left: 30px;
+}
+#session-username:hover{
+    color: #065454;
+    font-weight: bold;
+   box-shadow: 2px 2px black;
+   background-color: white;
+}
+#session-username:active{
+        color: black;
+}
+#textarea{
+    margin-top: 30px;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    margin-left:25px ;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(255, 255, 255,0.8);
+    text-align: left;
+}
