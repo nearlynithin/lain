@@ -239,3 +239,79 @@ footer {
     font-size: larger;
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
+
+.post-card {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+}
+
+/* Style the post header */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Style the post content */
+.post-content {
+    margin: 15px 0;
+}
+
+/* Style the post footer */
+.post-footer {
+    margin-top: 10px;
+}
+
+.post-footer a {
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.post-footer span {
+    margin-right: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .post-card {
+        width: 80%;
+    }
+}
+
+.create-post-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#createPostBtn {
+    background-color: #ffffff;
+    color: #0d424a;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.create-post-form textarea {
+    width: 100%;
+}
+
+.create-post-form button {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}

@@ -2,10 +2,10 @@
 
 {{define "content"}}
 <main>
-    <h1>Home</h1>
-
     {{if .Session.IsLoggedIn}}
-    <form action="/posts" method="POST">
+<div class="create-post-container">
+    <button id="createPostBtn">Create Post</button>
+    <form action="/posts" method="POST" id="createPostForm" style="display: none;">
         <textarea name="content" aria-label="content" placeholder="Write something..." rows="3" required>
             {{- .CreatePostForm.Get "content" -}}
         </textarea>
@@ -13,12 +13,22 @@
         <p>Could not create post: <code>{{.Error}}</code></p>
         {{end}}
 
-        <button>Post</button>
+        <button type="submit">Post</button>
     </form>
+</div>
     {{end}}
 
     {{range .Posts}}
     {{template "post-article.tmpl" .}}
     {{end}}
 </main>
+
+<script>
+    document.getElementById('createPostBtn').addEventListener('click', function() {
+        var btn = document.getElementById('createPostBtn');
+        var form = document.getElementById('createPostForm');
+        btn.style.display = 'none';
+        form.style.display = 'block';
+    });
+</script>
 {{end}}
