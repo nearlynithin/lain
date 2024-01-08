@@ -1,35 +1,56 @@
 {{template "layout.tmpl" .}}
 
-
 {{define "content"}}
 <main>
     {{if .Session.IsLoggedIn}}
-<div class="create-post-container">
-  <div>  <button id="createPostBtn">CREATE POST</button>
-    <form action="/posts" method="POST" id="createPostForm" style="display: none;">
-        <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="150" required>
-            {{- .CreatePostForm.Get "content" -}}
-        </textarea>
-        {{with .CreatePostErr}}
-        <p>Could not create post: <code>{{.Error}}</code></p></div>
-        {{end}}
-
-      <div><button type="submit" id="postbtn">POST</button></div>
-    </form>
-</div>
+      <div class="create-post-container">
+            <div>
+          <button id="createPostBtn">CREATE POST</button>
+         <form action="/posts" method="POST" id="createPostForm" style="display: none;">
+           <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="150" required>
+                 {{- .CreatePostForm.Get "content" -}}
+          </textarea>
+           {{with .CreatePostErr}}
+          <p>Could not create post: <code>{{.Error}}</code></p>
+           {{end}}
+           <div><button type="submit" onclick="submitForm()" id="postbtn">POST</button></div>
+                </form>
+            </div>
+        </div>
     {{end}}
 
     {{range .Posts}}
-    {{template "post-article.tmpl" .}}
+        {{template "post-article.tmpl" .}}
     {{end}}
 </main>
-
+<script>
+    var myButton = document.getElementById('createPostBtn');
+    document.addEventListener('keydown', function (event) {
+        if (event.keyCode === 9) {
+            event.preventDefault();
+            myButton.click();
+        }
+    });
+</script>
+<script>
+    function submitForm() {
+        document.getElementById("createPostForm").submit();
+    }
+    document.getElementById("textarea").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            submitForm();
+        }
+    });
+</script>
 <script>
     document.getElementById('createPostBtn').addEventListener('click', function() {
         var btn = document.getElementById('createPostBtn');
         var form = document.getElementById('createPostForm');
+        var textarea = document.getElementById('textarea');
+
         btn.style.display = 'none';
         form.style.display = 'block';
+        textarea.focus();
     });
 </script>
 {{end}}

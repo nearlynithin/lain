@@ -382,35 +382,12 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-#divide-display {
-    display: flex;
-}
 
-#divide-1 {
-    flex: 1;
-    box-sizing: border-box;
-}
-
-#divide-2 {
-    flex: 1;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-#divide-2 > div {
-    flex: 1;
-}
 #post-count{
-    margin-left: 175px;
+    margin-left: 19%;
     font-size: 35px;
 }
-#followerbtn{
-     padding:0px;
-     width:100px;
-     height: 50px;
-}
+
 .heading-article{
     text-decoration: none;
     color:rgb(0, 98, 100);
@@ -432,4 +409,17 @@ footer {
     padding: 40px;
     transition: 0.3s;
 }
+#NAME-USER{
+    font-size: 40px;
+    margin-top: 10px;
+}
+#followerbtn{
+    padding:10px;
+    padding-right: 45px;
+    width:0px;
+    height: 0px;
+    padding-top: 8px;
+    padding-bottom: 10px
+}
+
 
