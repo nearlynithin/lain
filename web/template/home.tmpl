@@ -7,7 +7,7 @@
 <div class="create-post-container">
   <div>  <button id="createPostBtn">CREATE POST</button>
     <form action="/posts" method="POST" id="createPostForm" style="display: none;">
-        <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="3" cols="150" required>
+        <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="150" required>
             {{- .CreatePostForm.Get "content" -}}
         </textarea>
         {{with .CreatePostErr}}
