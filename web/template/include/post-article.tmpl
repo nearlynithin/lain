@@ -1,7 +1,7 @@
 <article class="post-card">
     <div class="post-header">
-        <a href="/@{{.Username}}">
-            <h2 style="display: inline;">{{.Username}}</h2>
+        <a class="heading-article" href="/@{{.Username}}">
+            <h2 class="heading-article" style="display: inline;">{{.Username}}</h2>
         </a>
          <a href="/p/{{.ID}}" style="text-decoration: none;">
             <time-ago>
@@ -12,11 +12,11 @@
         </a>
     </div>
     <div class="post-content">
-        <p>{{linkify .Content}}</p>
+        <p id="linkify">{{linkify .Content}}</p>
     </div>
     <div class="post-footer">
         <a href="/p/{{.ID}}" title="{{.CommentsCount}} comments">
-            <span>💬</span>{{.CommentsCount}}
+            <span><iconify-icon icon="ep:comment" style="color: gray;font-size:30px;"></iconify-icon></iconify-icon></span>{{.CommentsCount}}
         </a>
     </div>
 </article>

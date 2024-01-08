@@ -241,14 +241,15 @@ footer {
 .post-card {
     width: 60%;
     margin: 20px auto;
+    margin-top: 40px;
     padding: 20px;
+    transition: 0.5s;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255,0.7);
 }
 
-/* Style the post header */
 .post-header {
     display: flex;
     justify-content: space-between;
@@ -258,10 +259,8 @@ footer {
 .post-header h2 {
     margin: 0;
     font-size: 1.2em;
-    color: #333;
 }
 
-/* Style the post footer */
 .post-footer {
     margin-top: 10px;
 }
@@ -277,7 +276,7 @@ footer {
     margin-right: 5px;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     .post-card {
         width: 80%;
@@ -383,18 +382,25 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-#divide-1{
-   height: 100%;
-   width: 50%;
+#divide-display {
+    display: flex;
 }
-#divide-2{
-   width: 50%;
-   height:100;
 
+#divide-1 {
+    flex: 1;
+    box-sizing: border-box;
 }
-#divide-display{
-    display:flex;
-    
+
+#divide-2 {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#divide-2 > div {
+    flex: 1;
 }
 #post-count{
     margin-left: 175px;
@@ -405,6 +411,25 @@ footer {
      width:100px;
      height: 50px;
 }
-
-
+.heading-article{
+    text-decoration: none;
+    color:rgb(0, 98, 100);
+    font-family: 'Outfit', sans-serif;
+    font-size: larger;
+}
+.heading-article:hover{
+    color:black;
+}
+.heading-article:active{
+    color:rgb(62, 59, 59);
+}
+#linkify{
+    font-size: larger;
+    padding-top: 5px;
+    font-family: 'DM Sans', sans-serif;
+}
+.post-card:hover{
+    padding: 40px;
+    transition: 0.3s;
+}
 
