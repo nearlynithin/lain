@@ -383,3 +383,28 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+#divide-1{
+   height: 100%;
+   width: 50%;
+}
+#divide-2{
+   width: 50%;
+   height:100;
+
+}
+#divide-display{
+    display:flex;
+    
+}
+#post-count{
+    margin-left: 175px;
+    font-size: 35px;
+}
+#followerbtn{
+     padding:0px;
+     width:100px;
+     height: 50px;
+}
+
+
+
