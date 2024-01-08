@@ -1,15 +1,14 @@
-<article>
-    <div>
-        <a href="@{{.Username}}">{{.Username}}</a>
+<article id="post-card-1" >
+    <div class="post-header">
+        <a class="heading-article" href="@{{.Username}}">{{.Username}}</a>
             <time-ago>
                 <time datetime='{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}'>
                     {{- .CreatedAt.Format "02 Jan 06 15:04 MST" -}}
                 </time>
             </time-ago>
     </div>
-    <p>{{linkify .Content}}</p>
+    <p id="linkify">{{linkify .Content}}</p>
 </article>
-
 {{define "head"}}
 <link rel="stylesheet" href="styles.css">
 <script src="/time-ago.js" async></script>
