@@ -32,6 +32,7 @@ function neatime(text) {
 		if (diff>182 && now.getFullYear()!==date.getFullYear()) {
 			text += ', ' + date.getFullYear();
 		}
-	}
+	}console.log(text);
 	return text;
+    
 }
