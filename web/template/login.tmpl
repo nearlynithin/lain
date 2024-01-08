@@ -25,7 +25,7 @@
                 <p>Could not login : <code>{{.Error}}</code></p>
                 {{end}}
 
-                <button>Login</button>
+                <button>{{if .Err}}Create account{{else}}Login{{end}}</button>
             </form>
 </main>
 
