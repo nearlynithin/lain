@@ -1,111 +1,239 @@
-/* styles.css */
-
-body {
-    font-family: 'Courier New', monospace;
-    margin: 10%;
-    position: relative; /* Make the body a positioning context for the pseudo-element */
+*{
+    margin:0;
+    padding:0;
 }
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('serial-experiments-lain-8wdbo9ohnyh74g0i.jpg');
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('misty-landscape-with-fog-pine-forest-mountain-slopes-illustration-nature-scene_1150-37301.webp'); /* Replace 'your-image.jpg' with your actual image URL */
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px); /* Adjust the pixel value based on your desired blur amount */
-    z-index: -1; /* Place the pseudo-element behind the content */
-}
+    background-attachment: fixed;
+  }
 
-main {
+.login-container {
+    margin: auto;
+    width: 300px;
     padding: 20px;
-}
-
-h1 {
-    color: #00ff00;
-}
-
-p {
-    color: #00ff00;
-}
-
-a {
-    color: #00ff00;
-}
-
-.welcome {
-    display: flex;
-    align-items: center;
+    color: black;
+    background-color:rgb(255, 255, 255,0.5);
+   
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #065454;
+    padding-bottom: 3%;
 }
 
 form {
-    margin-left: 10px; /* Adjust the margin as needed */
+    display: flex;
+    flex-direction: column;
 }
 
-button {
-    background-color: #00ff00;
-    color: #000;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    transition: background-color 0.3s, box-shadow 0.3s;
+input {
+    padding: 8px;
+    margin-bottom: 16px;
 }
-
-button:hover {
-    background-color: #008000; /* Darker green on hover */
-    box-shadow: 0 0 10px 5px #00ff00; /* Glowing effect on hover */
-}
-
-textarea {
-    background-color: black ; /* Dark green for textarea */
-    opacity: 100%;
-    color: #00ff00;
-    font-weight: 500;
-    border: 1px solid #00ff00;
+#LOGIN {
     padding: 10px;
-    font-family: 'Courier New', monospace;
-    transition: border-color 0.3s;
+    background-color: #13B8A0;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 3px 3px #0d424a;
+}
+#LOGIN:hover{
+    color: black;
+    box-shadow: none;
+    
+}
+#LOGIN:active{
+    color: white;
+}
+#LOGIN::after{
+    overflow: hidden;
+}
+header{
+    margin-bottom:5px;
 }
 
-textarea:focus {
-    outline: none;
-    border: 1px solid #00ff00;
+#headlain {
+    color: whitesmoke;
+    font-size:75px;
+    margin-left:45%;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top:13%;
+    margin-bottom:0%;
+    margin-right: 0%;
+
+}
+#nave{
+    padding: 25px;
+}
+#login {
+    text-decoration: none;
+    margin-left: 90%;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: white 2px;
+    box-shadow: 3px 3px white;
+}
+#login:hover{
+    color: #065454;
+    font-weight: bold;
+   box-shadow: 2px 2px black;
+   background-color: white;
+}
+#login:active{
+        color: black;
+}
+#Home{
+    text-decoration: none;
+    font-weight:bolder;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px white;
+}
+#Home:hover{
+   color:#065454 ;
+   box-shadow: 2px 2px black;
+   background-color:white;
+}
+#Home:active{
+    color: black;
 }
 
-code {
-    color: #00ff00;
-    background-color: #001100;
-    padding: 2px;
+#email {
+    border: none;
+     border-bottom:1px solid black ; 
+     outline: none;
+     overflow: visible;
+     background: none;
+     color:black;
+     padding-right:100px;
+     height: 20px;
+     opacity: 1;
+     font-size: medium;
 }
 
-.post-card {
-    border: 1px solid #111a28;
-    border-radius: 8px;
-    padding: 6px;
-    margin: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #111a28;
+#username {
+     border: none;
+     border-bottom:1px solid black ; 
+     outline: none;
+     overflow: visible;
+     background: none;
+     color:black;
+     padding-right: 100px;
+     height: 20px; 
+     opacity: 1;
+     font-size: medium;
 }
 
-.post-header {
+#could-not-login{
+       padding-top:5px;
+       padding-bottom: 8px;
+       color: rgb(34, 30, 80);
+       font-size: large;
+       
+}
+footer {
+    background-color:rgb(255, 255, 255,0.5);
+    background-attachment: fixed; 
+    bottom: 0;
+    width: 100%;
+    margin-top:35% ;
+    left: 0;
+    box-shadow:2px 2px 2px #065454 inset;
+
+
+}
+#icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; 
+}
+
+.user-mail {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#EMAIL {
+    display: inline-block;
+    vertical-align: middle;
+}
+#icon-user {
+    vertical-align: middle;
+}
+
+#USERNAME {
+    display: inline-block; 
+    vertical-align: middle;
+    margin-left: 10px; 
+}
+#footer-first{
+    width:100%;
+    height: 100px;
+    padding-bottom: 70px;
+    border-radius: 5px;
+}
+#footer-second{
+    width: 100%;
+    height: 100px;
+    padding-bottom: 70px;
+  
+}
+#footer-part{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    margin-right: 15px;
 }
-.post-header h2 {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    margin-right: 15px;
+#footer-third{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
 }
+#unordered-list{
+    padding-left: 485px;
+    font-size: larger;
+}
+#MADE{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 450px;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.GIT{
+    text-decoration: none;
+    color: black;
 
-
-.post-footer {
-    margin-top: 8px;
+}
+.GIT:hover{
+    color: greenyellow;
+}
+.GIT:active{
+    color: black;
+}
+#GO{
+    font-size: larger;
+    margin:0;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#GO a iconify-icon {
+    vertical-align: -7px; 
+}
+#HEADER-FOOTER{
+    padding-left:20px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#ACRONYM{
+    padding-left:20px ;
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
