@@ -2,31 +2,29 @@
 
  {{define "content"}}
  <main>
-     <h1>Login</h1>
-
+    <h1 id="headlain">Lain.</h1>
+    <div class="login-container">
             <form action="/login" method ="POST">
-                <div>
-                    <label for="email"> Email </label>
-                    <input type ="email" name="email" id ="email" placeholder="example@sjec.ac.in" value='{{.Form.Get "email"}}' 
-                    required>
+                <div><span id="icon"><ion-icon name="mail" style="font-size: 22px; " id="icon"></ion-icon>
+                    <label for="email" id="EMAIL"> EMAIL </label><div class="user-mail"></span>
+                    <input type ="email" name="email" id ="email" placeholder="EXAMPLE@SJEC.AC.IN" size="20" value='{{.Form.Get "email"}}' 
+                    required></div>
                 </div>
-
                 {{ with .Err}}
                 {{if or (eq .Error "user not found") (eq .Error "username taken") (eq .Error "invalid username")}}
-                <div>
-                    <label for="username">Username</label>
-                    <input type ="text" name="username" id ="username" placeholder ="yourname" value='{{$.Form.Get "username"}}' 
-                    required>
+                <div><span id="icon-user"><ion-icon name="person" style="font-size: 22px;" id="icon-user"></ion-icon>
+                    <label for="username" id="USERNAME">USERNAME</label> <div class="user-mail"></span>
+                    <input type ="text" name="username" id ="username" placeholder ="NAME" value='{{$.Form.Get "username"}}' 
+                    required></div>
                 </div>
                 {{end}}
                 {{end}}
-
                 {{with .Err}}
-                <p>Could not login : <code>{{.Error}}</code></p>
+                <p id="could-not-login">Could not login : {{.Error}}</code></p>
                 {{end}}
-
-                <button>{{if .Err}}Create account{{else}}Login{{end}}</button>
+                <button id="LOGIN">{{if.Err}}CREATE ACCOUNT {{else}}LOGIN{{end}}</button>
             </form>
+        </div>   
 </main>
 
 

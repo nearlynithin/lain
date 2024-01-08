@@ -1,16 +1,17 @@
 {{template "layout.tmpl" .}}
 
+
 {{define "content"}}
 <main>
     {{template "post-article.tmpl" .Post}}
    
     
-    <h2>Comments</h2>
+    <h2 id="HEAD-COMMENTS">Comments</h2>
     {{if .Session.IsLoggedIn}}
-    <form action="/comments" method="POST">
+    <form action="/comments" method="POST" id="post_id">
         <input type="hidden" name="post_id" value="{{.Post.ID}}">
 
-        <textarea name="content" aria-label="content" placeholder="Write something..." rows="3" required>
+        <textarea id="comments-text" name="content" aria-label="content" placeholder="Write something..." rows="1" required>
             {{- .CreateCommentForm.Get "content" -}}
         </textarea>
 
@@ -18,18 +19,30 @@
         <p>Could not create comment: <code>{{.Error}}</code></p>
         {{end}}
 
-        <button>Comment</button>
+        <button id="commentbtn-1" type="submit" onclick="submitForm()">COMMENT</button>
     </form>
     {{end}}
     {{if eq (len .Comments) 0 }}
-        <p>No comments yet.</p>
+        <p id="no-comments">No comments yet.</p>
     {{else}}
     <section>
+        <section style="display: flex; flex-direction: column; gap: 1rem;">
             {{range .Comments}}
             {{template "comment.tmpl" .}}
             {{end}}
+        </section>
     </section>
     {{end}}
+    
 </main>
-
+<script>
+    function submitForm() {
+        document.getElementById("post_id").submit();
+    }
+    document.getElementById("comments-text").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            submitForm();
+        }
+    });
+</script>
 {{end}}

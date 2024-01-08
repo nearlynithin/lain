@@ -61,7 +61,8 @@ func (h *Handler) init() {
 	})
 
 	r.Handle("/user-follows", mux.MethodHandler{
-		http.MethodPost: h.followUser,
+		http.MethodPost:   h.followUser,
+		http.MethodDelete: h.unfollowUser,
 	})
 
 	r.Handle("/*", mux.MethodHandler{
@@ -72,9 +73,11 @@ func (h *Handler) init() {
 	gob.Register(url.Values{})
 	h.session = sessions.New(h.SessionKey)
 
+	//this is a list of middlewares
 	h.handler = r
 	h.handler = h.withUser(h.handler)
 	h.handler = h.session.Enable(h.handler)
+	h.handler = withMethodOverride(h.handler)
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -90,4 +93,27 @@ func (h *Handler) static() http.HandlerFunc {
 		panic(err)
 	}
 	return http.FileServer(http.FS(sub)).ServeHTTP
+}
+
+// code from Alex edwards
+// This is "Middleware", that checks if the request method is a post request
+func withMethodOverride(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Only act on POST requests.
+		if r.Method == "POST" {
+
+			// Look in the request body and headers for a spoofed method.
+			// Prefer the value in the request body if they conflict.
+			method := r.PostFormValue("_method")
+
+			// Check that the spoofed method is a valid HTTP method and
+			// update the request object accordingly.
+			if method == "PUT" || method == "PATCH" || method == "DELETE" {
+				r.Method = method
+			}
+		}
+
+		// Call the next handler in the chain.
+		next.ServeHTTP(w, r)
+	})
 }

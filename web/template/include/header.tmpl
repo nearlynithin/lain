@@ -1,15 +1,13 @@
 <header>
-    <nav>
-        <a href="/">Home</a>
+    <nav id="nave">
+       <a id="Home" href="/">HOME</a>
         {{if .Session.IsLoggedIn}}
-        <a href="@{{.Session.User.Username}}">{{.Session.User.Username}}</a>
+        <a href="@{{.Session.User.Username}}" id="session-username" type="button">{{.Session.User.Username}}</a>
         <form action="/logout" method="POST" style="display: contents;">
-            <button>Logout</button>
+            <button id="logout">LOGOUT</button>
         </form>
         {{else}}
-        <a href="/login">Login</a>
+        <a id="login" href="/login">LOGIN</a>
         {{end}}
     </nav>
 </header>
-
-<hr>
