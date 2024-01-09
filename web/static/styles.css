@@ -67,7 +67,8 @@ header{
 
 }
 #nave{
-    padding: 25px;
+    padding: 10px;
+    margin-top:10px ;
 }
 #login {
     text-decoration: none;
@@ -319,7 +320,7 @@ footer {
     margin-top: 30px;
     box-shadow: 4px 4px 5px #587d72;
     font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Franklin Gologthic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 50%;
 }
 #postbtn:active{
@@ -329,7 +330,7 @@ footer {
 }
 #logout{
     text-decoration: none;
-    margin-left: 81%;
+    margin-left: 79%;
     color: white;
     padding: 10px;
     border: 1px solid white;
@@ -415,11 +416,20 @@ footer {
 }
 #followerbtn{
     padding:10px;
+<<<<<<< HEAD
     padding-right: 40px;
     width:70px;
     height: 30px;
     padding-top: 10px;
     padding-bottom: 10px
+=======
+    padding-right: 45px;
+    width:0px;
+    height: 0px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    margin-top: 30px
+>>>>>>> 14640206cc3fc658cb2341958556d88ac4850358
 }
 #post-not-create{
     margin-left: 140px;
@@ -494,4 +504,10 @@ footer {
 .time-ago{
     color: black;
     font-size: large;
+} 
+#divide-1{
+    display: flex;
+}
+#divide-2{
+    margin-left: 45%;
 }

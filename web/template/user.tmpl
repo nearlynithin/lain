@@ -1,19 +1,13 @@
 {{ template "layout.tmpl" .}}
-
 {{define "content"}}
-    <main> <div id="divide-display"><div id="divide-1">
-        <h1 id="NAME-USER">{{.User.Username}}</h1>
+    <main> <div id="divide-2"><div>
+    <iconify-icon id="icon-user" icon="healthicons:ui-user-profile" style="color: white;" width="250" height="250">
 
-        <dl>
-            <dt>Following </dt>
-            <dd>{{ .User.FollowingCount}}</dd>
-        </dl>
-        <dl>
-            <dt>Followers </dt>
-            <dd>{{ .User.FollowersCount}}</dd>
-        </dl>
+    </iconify-icon>
+      <div id="divide-1"> <div>  <h1 id="NAME-USER">{{.User.Username}}
 
-        {{if and .Session.IsLoggedIn (ne .Session.User.ID .User.ID)}}
+        </h1> </div>
+        <div> {{if and .Session.IsLoggedIn (ne .Session.User.ID .User.ID)}}
         <form action = "/user-follows" method="POST">
             <input type = "hidden" name = "user_id" value = "{{.User.ID}}">
 
@@ -26,9 +20,18 @@
                 {{end}}
             <button id="followerbtn">{{if .User.Following}}Following{{else}}Follow{{end}}</button>
         </form>
+        {{end}}</div>
     </div>
-        {{end}}
-        <div id="divide-2">
+</div>
+
+        <div><dl>
+           <dt>Following </dt>
+            <dd>{{ .User.FollowingCount}}</dd>
+        </dl></div>
+        <div><dl>
+            <dt>Followers </dt>
+            <dd>{{ .User.FollowersCount}}</dd>
+        </dl></div></div>
         <h3 id="post-count">{{.User.PostsCount}} Posts</h3>
         {{if eq (len .Posts) 0}}
         <p>No posts yet</p>
@@ -37,7 +40,7 @@
             {{range .Posts}}
             {{template "post-article.tmpl" .}}
             {{end}}
-        </section></div></div>
+        </section>
         {{end}}
     </main>
 {{end}}
