@@ -278,7 +278,6 @@ footer {
     margin-right: 5px;
 }
 
-
 @media (max-width: 768px) {
     .post-card {
         width: 80%;
@@ -331,7 +330,7 @@ footer {
 }
 #logout{
     text-decoration: none;
-    margin-left: 79%;
+    margin-left: 75%;
     color: white;
     padding: 10px;
     border: 1px solid white;
@@ -359,6 +358,8 @@ footer {
     box-shadow: 3px 3px white;
     background-color: transparent;
     margin-left: 30px;
+    font-weight:bolder;
+    font-size: large;
 }
 #session-username:hover{
     color: #065454;
