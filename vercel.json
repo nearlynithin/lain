@@ -1,6 +1,15 @@
 {
     "version": 2,
     "builds": [
-      { "src": "api/**/*.go", "use": "@vercel/go" }
-    ]
+      { 
+        "src": "./cmd/lain", 
+        "use": "@vercel/go" 
+    }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "destination": "/cmd/lain"
+        }
+      ]
   }
