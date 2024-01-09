@@ -3,8 +3,8 @@
     padding:0;
 }
 body{
-    margin: 5%;
-    padding: 2%;
+    margin: 5px;
+    padding: 2px;
     background-image: url('misty-landscape-with-fog-pine-forest-mountain-slopes-illustration-nature-scene_1150-37301.webp'); /* Replace 'your-image.jpg' with your actual image URL */
     background-size: cover;
     background-attachment: fixed;
@@ -242,7 +242,7 @@ footer {
     width: 60%;
     margin: 20px auto;
     margin-top: 40px;
-    padding: 20px;
+    padding: 1px;
     transition: 0.5s;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -262,7 +262,7 @@ footer {
 }
 
 .post-footer {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .post-footer a {
@@ -273,7 +273,7 @@ footer {
 }
 
 .post-footer span {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
@@ -415,10 +415,10 @@ footer {
 }
 #followerbtn{
     padding:10px;
-    padding-right: 45px;
-    width:0px;
-    height: 0px;
-    padding-top: 8px;
+    padding-right: 40px;
+    width:70px;
+    height: 30px;
+    padding-top: 10px;
     padding-bottom: 10px
 }
 #post-not-create{
