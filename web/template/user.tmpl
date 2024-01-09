@@ -1,7 +1,7 @@
 {{ template "layout.tmpl" .}}
 {{define "content"}}
     <main> <div id="divide-2"><div>
-    <iconify-icon id="icon-user" icon="healthicons:ui-user-profile" style="color: white;" width="250" height="250">
+    <iconify-icon id="icon-user-1" icon="healthicons:ui-user-profile" style="color: white;" width="250" height="250">
 
     </iconify-icon>
       <div id="divide-1"> <div>  <h1 id="NAME-USER">{{.User.Username}}
@@ -24,14 +24,14 @@
     </div>
 </div>
 
-        <div><dl>
+     <div id="divide-3"> <div><dl>
            <dt>Following </dt>
             <dd>{{ .User.FollowingCount}}</dd>
         </dl></div>
         <div><dl>
             <dt>Followers </dt>
             <dd>{{ .User.FollowersCount}}</dd>
-        </dl></div></div>
+        </dl></div></div></div>
         <h3 id="post-count">{{.User.PostsCount}} Posts</h3>
         {{if eq (len .Posts) 0}}
         <p>No posts yet</p>
