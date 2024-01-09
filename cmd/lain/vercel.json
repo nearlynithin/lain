@@ -1,7 +1,15 @@
 {
     "version": 2,
     "builds": [
-      { "src": "./cmd/lain", "use": "@vercel/go" }
-    ]
+      { 
+        "src": "./cmd/lain", 
+        "use": "@vercel/go" 
+    }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "destination": "/"
+        }
+      ]
   }
-  
