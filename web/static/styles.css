@@ -455,16 +455,16 @@ footer {
      padding-top: 6px;
      padding-bottom:6px;
      margin-top:10px;
-     border: none;
+     border: 1px solid white;
      box-shadow: 3px 4px 5px black;
-     color: black;
-     background-color: rgb(255, 255, 255,0.8);
+     color: #065454;
+     background-color: white;
      border-radius: 4px;
 
 }
 #commentbtn-1:hover{
-    background-color: rgb(137, 135, 135);
-    color: white;
+    background-color: white;
+    color: #065454;
     border-radius: 10px;
 }
 #commentbtn-1:active{
