@@ -2,43 +2,18 @@
 package api
 
 import (
-	"context"
-	"database/sql"
 	"log"
 	"net/http"
 	"os"
 
-	_ "github.com/lib/pq"
+	"shared" // Import shared functionality
+
 	"lain.sceptix.net"
 	"lain.sceptix.net/web"
 )
 
-var db *sql.DB
-
-func init() {
-	setupDB()
-}
-
-func setupDB() {
-	var err error
-	db, err = sql.Open("postgres", os.Getenv("SQL_ADDR"))
-	if err != nil {
-		log.Fatal("failed to connect to database:", err)
-	}
-
-	defer db.Close()
-
-	if err := db.Ping(); err != nil {
-		log.Fatal("failed to ping database:", err)
-	}
-
-	if err := lain.MigrateSQL(context.Background(), db); err != nil {
-		log.Fatal("failed to migrate SQL:", err)
-	}
-}
-
 func Handler(w http.ResponseWriter, r *http.Request) {
-	queries := lain.New(db)
+	queries := lain.New(shared.DB) // Use the shared database instance
 	svc := &lain.Service{
 		Queries: queries,
 	}
