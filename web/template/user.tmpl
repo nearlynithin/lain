@@ -44,3 +44,59 @@
         {{end}}
     </main>
 {{end}}
+
+<div id="data-container"></div>
+<div class="pagination-container"></div>
+<script>
+  // Sample user posts data
+  const userPosts = [
+    { id: 1, title: 'Post 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { id: 2, title: 'Post 2', body: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+    // Add more posts as needed
+  ];
+
+  // Items per page
+  const itemsPerPage = 2;
+
+  // Function to display user posts for a specific page
+  function displayPosts(page) {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pagePosts = userPosts.slice(startIndex, endIndex);
+
+    const dataContainer = document.getElementById('data-container');
+    dataContainer.innerHTML = '';
+
+    pagePosts.forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+      `;
+      dataContainer.appendChild(postElement);
+    });
+  }
+
+  // Function to generate pagination buttons
+  function generatePaginationButtons(totalPages) {
+    const paginationContainer = document.querySelector('.pagination-container');
+    paginationContainer.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement('button');
+      button.textContent = i;
+      button.classList.add('pagination-button');
+      button.addEventListener('click', () => displayPosts(i));
+      paginationContainer.appendChild(button);
+    }
+  }
+
+  // Initialize and display the first page
+  displayPosts(1);
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(userPosts.length / itemsPerPage);
+
+  // Generate pagination buttons
+  generatePaginationButtons(totalPages);
+</script>
