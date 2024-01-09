@@ -24,17 +24,17 @@
     </div>
 </div>
 
-     <div id="divide-3"> <div><dl>
-           <dt>Following </dt>
-            <dd>{{ .User.FollowingCount}}</dd>
+     <div id="divide-3"> <div id="following"><dl>
+           <dt></dt>Following </dt>
+            <dd class="userno">{{ .User.FollowingCount}}</dd>
         </dl></div>
-        <div><dl>
+        <div id="follower"><dl>
             <dt>Followers </dt>
-            <dd>{{ .User.FollowersCount}}</dd>
+            <dd class="userno">{{ .User.FollowersCount}}</dd>
         </dl></div></div></div>
         <h3 id="post-count">{{.User.PostsCount}} Posts</h3>
         {{if eq (len .Posts) 0}}
-        <p>No posts yet</p>
+        <p id="nopostyet">No posts yet</p>
         {{else}}
        <section >
             {{range .Posts}}
