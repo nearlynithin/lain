@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	_ "github.com/lib/pq"
 	"lain.sceptix.net"
@@ -16,6 +17,20 @@ import (
 )
 
 func main() {
+
+	dsn := "postgresql://nithin:REVEAL_PASSWORD@sunset-worm-8099.8nk.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
+	db, err := sql.Open("postgres", dsn)
+	if err != nil {
+		log.Fatal("failed to connect database", err)
+	}
+
+	var now time.Time
+	err = db.QueryRow("SELECT NOW()").Scan(&now)
+	if err != nil {
+		log.Fatal("failed to execute query", err)
+	}
+
+	fmt.Println(now)
 	if err := run(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
