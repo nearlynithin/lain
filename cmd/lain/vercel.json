@@ -9,7 +9,7 @@
     "routes": [
         {
           "src": "/(.*)",
-          "destination": "/cmd/lain"
+          "destination": "/"
         }
       ]
   }
