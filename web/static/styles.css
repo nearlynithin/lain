@@ -67,7 +67,8 @@ header{
 
 }
 #nave{
-    padding: 25px;
+    padding: 10px;
+    margin-top:10px ;
 }
 #login {
     text-decoration: none;
@@ -329,7 +330,7 @@ footer {
 }
 #logout{
     text-decoration: none;
-    margin-left: 81%;
+    margin-left: 79%;
     color: white;
     padding: 10px;
     border: 1px solid white;
