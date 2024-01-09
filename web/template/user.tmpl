@@ -4,9 +4,9 @@
     <iconify-icon id="icon-user-1" icon="healthicons:ui-user-profile" style="color: white;" width="250" height="250">
 
     </iconify-icon>
-      <div id="divide-1"> <div>  <h1 id="NAME-USER">{{.User.Username}}
+      <div id="divide-1"> <div> <div id="NAME-USER"><h1 >{{.User.Username}}
 
-        </h1> </div>
+        </h1></div> </div>
         <div> {{if and .Session.IsLoggedIn (ne .Session.User.ID .User.ID)}}
         <form action = "/user-follows" method="POST">
             <input type = "hidden" name = "user_id" value = "{{.User.ID}}">
