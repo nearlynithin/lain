@@ -426,8 +426,16 @@ footer {
     padding-bottom: 10px;
     margin-top: 13px;
     margin-left: 18px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #0d424a;
+
 
 }
+#followerbtn:active{
+    box-shadow: none;
+}
+
 #post-not-create{
     margin-left: 140px;
     color: red;
@@ -467,6 +475,7 @@ footer {
      color: #065454;
      background-color: white;
      border-radius: 4px;
+
 
 }
 #commentbtn-1:hover{
@@ -510,4 +519,22 @@ footer {
 }
 #divide-3{
     display: flex;
+}
+#following{
+    font-size: 30px;
+    margin-left: -121px;
+    margin-top: 20px;
+}
+#follower{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 175px;
+}
+.userno{
+    margin-left: 50px;
+}
+#nopostyet{
+     margin-left: 310px;
+     font-size: larger;
+     font-weight: 600;
 }
