@@ -491,3 +491,7 @@ footer {
     padding: 40px;
     transition: 0.3s;
 }
+.time-ago{
+    color: black;
+    font-size: large;
+}

@@ -2,9 +2,26 @@
     <div class="post-header">
         <a class="heading-article" href="@{{.Username}}">{{.Username}}</a>
             <time-ago>
-                <time datetime='{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}'>
-                    {{- .CreatedAt.Format "02 Jan 06 15:04 MST" -}}
-                </time>
+                <script>
+                    var createdAt = new Date('{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}');
+                    var now = new Date();
+                    var timeDifference = now - createdAt;
+                
+                    var seconds = Math.floor(timeDifference / 1000);
+                    var minutes = Math.floor(seconds / 60);
+                    var hours = Math.floor(minutes / 60);
+                    var days = Math.floor(hours / 24);
+                
+                    if (days > 0) {
+                        document.write('<span class="time-ago">' +days + (days === 1 ? " d" : " d") + " ago");
+                    } else if (hours > 0) {
+                        document.write('<span class="time-ago">' +hours + (hours === 1 ? " h" : " h") + " ago");
+                    } else if (minutes > 0) {
+                        document.write('<span class="time-ago">' +minutes + (minutes === 1 ? " m" : " m") + " ago");
+                    } else {
+                        document.write('<span class="time-ago">' +seconds + (seconds === 1 ? " s" : " s") + " ago");
+                    }
+                </script>
             </time-ago>
     </div>
     <p id="linkify">{{linkify .Content}}</p>
