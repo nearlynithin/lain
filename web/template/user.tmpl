@@ -25,7 +25,8 @@
                 <p>Could not follow user : <code>{{.UserFollowErr}}</code></p>
                 {{end}}
             <button id="followerbtn">{{if .User.Following}}Following{{else}}Follow{{end}}</button>
-        </form></div>
+        </form>
+    </div>
         {{end}}
         <div id="divide-2">
         <h3 id="post-count">{{.User.PostsCount}} Posts</h3>

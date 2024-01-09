@@ -241,14 +241,15 @@ footer {
 .post-card {
     width: 60%;
     margin: 20px auto;
-    padding: 5px;
-    border: 3px solid #080707;
-    border-radius: 20px;
-    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgb(240, 255, 254);
+    margin-top: 40px;
+    padding: 20px;
+    transition: 0.5s;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255,0.7);
 }
 
-/* Style the post header */
 .post-header {
     display: flex;
     justify-content: space-between;
@@ -258,10 +259,8 @@ footer {
 .post-header h2 {
     margin: 0;
     font-size: 1.2em;
-    color: #333;
 }
 
-/* Style the post footer */
 .post-footer {
     margin-top: 10px;
 }
@@ -277,7 +276,7 @@ footer {
     margin-right: 5px;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     .post-card {
         width: 80%;
@@ -299,7 +298,7 @@ footer {
     box-shadow: 4px 4px 5px #587d72;
     font-weight: bold;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 50%;
+    margin-left: 49%;
 }
 #createPostBtn:active{
     
@@ -383,28 +382,116 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-#divide-1{
-   height: 100%;
-   width: 50%;
-}
-#divide-2{
-   width: 50%;
-   height:100;
 
-}
-#divide-display{
-    display:flex;
-    
-}
 #post-count{
-    margin-left: 175px;
+    margin-left: 19%;
     font-size: 35px;
 }
-#followerbtn{
-     padding:0px;
-     width:100px;
-     height: 50px;
+
+.heading-article{
+    text-decoration: none;
+    color:rgb(0, 98, 100);
+    font-family: 'Outfit', sans-serif;
+    font-size: larger;
 }
+.heading-article:hover{
+    color:black;
+}
+.heading-article:active{
+    color:rgb(62, 59, 59);
+}
+#linkify{
+    font-size: larger;
+    padding-top: 5px;
+    font-family: 'DM Sans', sans-serif;
+}
+.post-card:hover{
+    padding: 40px;
+    transition: 0.3s;
+}
+#NAME-USER{
+    font-size: 40px;
+    margin-top: 10px;
+}
+#followerbtn{
+    padding:10px;
+    padding-right: 45px;
+    width:0px;
+    height: 0px;
+    padding-top: 8px;
+    padding-bottom: 10px
+}
+#post-not-create{
+    margin-left: 140px;
+    color: red;
+    font-size: large;
+}
+#HEAD-COMMENTS{
+    font-size: 28px;
+    margin-left: 40px;
+}
+#comments-text{
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(255, 255, 255,0.8);
+    text-align:left;
+    outline: none;
+    text-indent: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 50%;
+    margin-left: 40px;
+}
+#commentbtn-1{
+     font-size: large;
+     text-align: left;
+     width: 107px;
+     margin-left: 40px;
+     padding-left: 5px;
+     padding-right: 5px;
+     padding-top: 6px;
+     padding-bottom:6px;
+     margin-top:10px;
+     border: 1px solid white;
+     box-shadow: 3px 4px 5px black;
+     color: #065454;
+     background-color: white;
+     border-radius: 4px;
 
-
-
+}
+#commentbtn-1:hover{
+    background-color: white;
+    color: #065454;
+    border-radius: 10px;
+}
+#commentbtn-1:active{
+    box-shadow: none;
+}
+#no-comments{
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: larger;
+    font-weight: 800;
+}
+#post-card-1{
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 40px;
+    padding: 20px;
+    transition: 0.5s;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255,0.7);
+}
+#post-card-1:hover{
+    padding: 40px;
+    transition: 0.3s;
+}
+.time-ago{
+    color: black;
+    font-size: large;
+}
