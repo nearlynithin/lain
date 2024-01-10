@@ -5,8 +5,8 @@
 body{
     margin: 5px;
     padding: 2px;
-    background-image: url('https://cdn.dribbble.com/users/5339449/screenshots/16151150/media/54a281f2dd357658f800be5b5320b82d.jpg'); /* Replace 'your-image.jpg' with your actual image URL */
-    background-size: contain;
+    background-image: url('misty-landscape-with-fog-pine-forest-mountain-slopes-illustration-nature-scene_1150-37301.webp'); /* Replace 'your-image.jpg' with your actual image URL */
+    background-size: cover;
     background-attachment: fixed;
   }
 
