@@ -228,6 +228,7 @@ footer {
 #GO a iconify-icon {
     vertical-align: -7px; 
 }
+
 #HEADER-FOOTER{
     padding-left:20px;
     padding-bottom: 25px;
@@ -389,6 +390,9 @@ footer {
 #post-count{
     margin-left: 19%;
     font-size: 35px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 100px;
 }
 
 .heading-article{
@@ -435,8 +439,8 @@ footer {
     border: none;
     border-radius: 3px;
     box-shadow: 2px 2px 3px #0d424a;
-
-
+    margin-left: 60px;
+ 
 }
 #followerbtn:active{
     box-shadow: none;
@@ -518,7 +522,7 @@ footer {
     font-size: large;
 } 
 #divide-1{
-    display: flex;
+    display: fle;
 }
 #divide-2{
     margin-left: 40%;
@@ -530,19 +534,43 @@ footer {
   .pagination-container {
     text-align: center;
     margin-top: 20px;
-  }
-
-  .pagination-button {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-  }
-
-  .pagination-button:hover {
-    background-color: #2980b9;
-  }
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#follower{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 175px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.userno{
+    margin-left: 50px;
+}
+#nopostyet{
+     margin-left: 310px;
+     font-size: larger;
+     font-weight: 600;
+     color:white;
+     font-family: 'Outfit', sans-serif
+}
+#divide-main{
+    border: 3px solid white;
+    width: 472px;
+    height: 400px;
+    margin-left: 28%;
+    padding-right: 121px;
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background-color:rgb(255, 255, 255,0.3);
+    margin-top: 30px;
+}
+#divide-main:hover{
+    -webkit-box-shadow: 0 0 20px #fff;
+    box-shadow: 0 0 20px #fff;
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}

@@ -1,6 +1,6 @@
 {{ template "layout.tmpl" .}}
 {{define "content"}}
-    <main> <div id="divide-2"><div>
+    <main><div id="divide-main"><div id="divide-2"><div>
     <iconify-icon id="icon-user-1" icon="healthicons:ui-user-profile" style="color: white;" width="250" height="250">
 
     </iconify-icon>
@@ -31,7 +31,7 @@
         <div id="follower"><dl>
             <dt>Followers </dt>
             <dd class="userno">{{ .User.FollowersCount}}</dd>
-        </dl></div></div></div>
+        </dl></div></div></div></div>
         <h3 id="post-count">{{.User.PostsCount}} Posts</h3>
         {{if eq (len .Posts) 0}}
         <p id="nopostyet">No posts yet</p>
