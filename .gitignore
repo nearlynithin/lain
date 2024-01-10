@@ -1,3 +1,7 @@
 cockroach-data/
+<<<<<<< HEAD
 /lain.exe
 lain.exe
+=======
+**/*.exe
+>>>>>>> 76e41c5808a983c7815b9962f995009bf3d89c3f
