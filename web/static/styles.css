@@ -390,6 +390,9 @@ footer {
 #post-count{
     margin-left: 19%;
     font-size: 35px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 100px;
 }
 
 .heading-article{
@@ -531,11 +534,13 @@ footer {
     font-size: 30px;
     margin-left: -121px;
     margin-top: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 #follower{
     font-size: 30px;
     margin-top: 20px;
     margin-left: 175px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .userno{
     margin-left: 50px;
@@ -544,6 +549,8 @@ footer {
      margin-left: 310px;
      font-size: larger;
      font-weight: 600;
+     color:white;
+     font-family: 'Outfit', sans-serif
 }
 #divide-main{
     border: 3px solid white;
@@ -555,4 +562,9 @@ footer {
     padding-top: 50px;
     padding-bottom: 60px;
     background-color:rgb(255, 255, 255,0.3);
+    margin-top: 30px;
+}
+#divide-main:hover{
+    -webkit-box-shadow: 0 0 20px #fff;
+    box-shadow: 0 0 20px #fff;
 }
