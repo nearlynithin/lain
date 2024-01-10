@@ -582,8 +582,8 @@ footer {
     border: none;
     background-color: white;
     font-size: 40px;
-    border-radius: 10px;
-    color: #0d424a;
+    border-radius: 15px;
+    color: #201077;
     box-shadow: 2px 2px 1px #0d424a;
   }
   #scrollToTopBtn iconify-icon:active{
