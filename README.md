@@ -32,5 +32,5 @@ go build ./cmd/lain && ./lain
 
 ## Usage
 <P>There might be some css implmentation errors like logout button would come out of navgiation bar or the text area where you message would exceed the screen.  <br>In order to fix the error, keep the zoom value to given following browsers <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * CHROME (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * MICROSOFT EDGE (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * MOZILLA FIREFOX (ZOOM 90%-100%)<BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br> These errors were identified using only 3 browsers, if there is any css implementation error,try to zoom out and it depends upon the screen ratio too. </P> 
-<h3>SHORT CUT KEYS</h3>
-* To create post u can use TAB key <br> * To send post OR To send comment u can use ENTER key <BR> * 3)To remove text area or post area u can use ESCAPE key
+<h3>SHORTCUT KEYS</h3>
+* To create post u can use TAB key <br> * To send post OR To send comment u can use ENTER key <BR> * To remove text area or post area u can use ESCAPE key
