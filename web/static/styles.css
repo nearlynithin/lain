@@ -573,4 +573,19 @@ footer {
     bottom: 20px;
     right: 20px;
     display: none;
+    background: transparent;
+    border: none;
+    outline: none;
 }
+  
+  #scrollToTopBtn iconify-icon {
+    border: none;
+    background-color: white;
+    font-size: 40px;
+    border-radius: 10px;
+    color: #0d424a;
+    box-shadow: 2px 2px 1px #0d424a;
+  }
+  #scrollToTopBtn iconify-icon:active{
+    box-shadow: none;
+  }
