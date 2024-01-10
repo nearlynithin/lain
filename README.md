@@ -1,3 +1,5 @@
 <h1>LAIN.(SOCIAL MEDIA WEBSITE)</h1>
 <h2>FRONT END</h2>
-<p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  THIS WEBSITE FRONTENT END DESIGN IS MADE UP USING HTML ,CSS AND JAVASCRIPT</p>
+<p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  This website frontend end design is made up of html ,css and javascript. Frameworks were used at beginining for backend purpose , then styling the website was done from scratch without any framework. </p>
+<h3>NOTE</h3>
+<P>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp *The website only works in laptop since we havent used media queries.  <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp *There might be some implmentation css error like logout button would come out of navgiation bar or the text area where you <br> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  message would exceed the screen.  <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp *Inorder to fix the error, keep the zoom value to given following browsers <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -CHROME (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -MICROSOFT EDGE (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -FIREFOX (ZOOM 90%-100%)<BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp *these errors were identified using only 3 browsers, if there is any css implementation error,try to zoom out and it depends upon <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp laptop also. </P>
