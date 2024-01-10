@@ -25,6 +25,15 @@ Run cockroach.
 ```bash
 cockroach start-single-node --insecure --http-addr=localhost:4000
 ```
+and copy the sql address specific to your machine
+example ```sql:              postgresql://root@PenPen:26257/defaultdb?sslmode=disable```
+paste it in the ```main.go``` file located at ```/cmd/lain``` like so:
+```
+fs.StringVar(&addr, "addr", ":4000", "HTTP service address")
+fs.StringVar(&sqlAddr, "sql-addr", "postgresql://root@PenPen:26257/defaultdb?sslmode=disable", "SQL address")
+fs.StringVar(&sessionKey, "session-key", "secretkeynottobeshared", "Session Key")
+```
+
 In a new terminal, Run the go build command
 ```bash
 go build ./cmd/lain && ./lain
