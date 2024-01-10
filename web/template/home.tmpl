@@ -25,6 +25,28 @@
     {{end}}
     <button id="scrollToTopBtn">Scroll to Top</button>
 </main>
+<!-- ... (your existing HTML code) -->
+
+<main>
+    {{if .Session.IsLoggedIn}}
+        <!-- ... (your existing create post section) -->
+    {{end}}
+
+    {{range .Posts}}
+        {{template "post-article.tmpl" .}}
+    {{end}}
+
+    <!-- Scroll to Top button with an arrow icon -->
+        <iconify-icon icon="ph:arrow-square-up-thin"></iconify-icon>
+    </button>
+</main>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+    // ... (your existing scroll to top script)
+</script>
+
+<!-- ... (your existing scripts) -->
+
 <script>
     var scrollToTopBtn = document.getElementById('scrollToTopBtn');
     function toggleScrollToTopButton() {
@@ -121,5 +143,3 @@
         }
     });
 </script>
-
-

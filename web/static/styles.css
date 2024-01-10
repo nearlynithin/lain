@@ -572,5 +572,34 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
+    background-color: #007bff; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
+.icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #eeff00; /* Change the background color as needed */
+    color: #fff; /* Change the icon color as needed */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.icon-container:hover {
+    background-color: #0056b3; /* Change the hover background color as needed */
+}
+
+.icon-container iconify-icon {
+    width: 24px; /* Adjust the icon size as needed */
+    height: 24px;
+    fill: currentColor;
+}
+
