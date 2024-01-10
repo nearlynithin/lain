@@ -436,8 +436,8 @@ footer {
     border: none;
     border-radius: 3px;
     box-shadow: 2px 2px 3px #0d424a;
-
-
+    margin-left: 60px;
+ 
 }
 #followerbtn:active{
     box-shadow: none;
@@ -519,7 +519,7 @@ footer {
     font-size: large;
 } 
 #divide-1{
-    display: flex;
+    display: fle;
 }
 #divide-2{
     margin-left: 45%;
@@ -544,4 +544,15 @@ footer {
      margin-left: 310px;
      font-size: larger;
      font-weight: 600;
+}
+#divide-main{
+    border: 3px solid white;
+    width: 472px;
+    height: 400px;
+    margin-left: 28%;
+    padding-right: 121px;
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background-color:rgb(255, 255, 255,0.3);
 }
