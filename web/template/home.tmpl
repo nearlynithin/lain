@@ -22,7 +22,31 @@
     {{range .Posts}}
         {{template "post-article.tmpl" .}}
     {{end}}
+    <button id="scrollToTopBtn">Scroll to Top</button>
 </main>
+<script>
+    var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Show or hide the button based on the scroll position
+    function toggleScrollToTopButton() {
+        if (window.pageYOffset > 20) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    }
+
+    // Scroll event listener
+    window.addEventListener('scroll', function () {
+        toggleScrollToTopButton();
+    });
+
+    // Click event listener to scroll to the top
+    scrollToTopBtn.addEventListener('click', function () {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+</script>
 <script>
     let myButton = document.getElementById('createPostBtn');
     document.addEventListener('keydown', function (event){
