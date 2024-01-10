@@ -23,6 +23,7 @@
         {{template "post-article.tmpl" .}}
         
     {{end}}
+    <button id="loadMoreBtn">Load More</button>
 </main>
 <script>
     let myButton = document.getElementById('createPostBtn');
@@ -69,3 +70,39 @@
     }
 </script>
 {{end}}
+<script>
+    let visiblePosts = 5; // Initial number of visible posts
+
+    function showMorePosts() {
+        visiblePosts += 5; // Increase the number of visible posts (you can change this value)
+
+        // Show only the specified number of posts
+        let posts = document.querySelectorAll('.post');
+        posts.forEach((post, index) => {
+            if (index < visiblePosts) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+
+        // Check if the number of visible posts is 5 or more, and redirect to the home page
+        if (visiblePosts >= 5) {
+            window.location.href = 'http://localhost:4000/'; // Replace '/' with the URL of your home page
+        }
+    }
+
+    // Attach the showMorePosts function to the "Load More" button
+    document.getElementById('loadMoreBtn').addEventListener('click', showMorePosts);
+
+    // Initially, hide all posts except the first set
+    document.querySelectorAll('.post').forEach((post, index) => {
+        if (index < visiblePosts) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+</script>
+
+
