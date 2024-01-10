@@ -1,8 +1,3 @@
-
-<h3>NOTE</h3>
-<P>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1)The website only works in laptop since we havent used media queries.  <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 2)There might be some implmentation css error like logout button would come out of navgiation bar or the text area where you <br> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  message would exceed the screen.  <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 3)Inorder to fix the error, keep the zoom value to given following browsers <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -CHROME (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -MICROSOFT EDGE (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -FIREFOX (ZOOM 90%-100%)<BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 4)These errors were identified using only 3 browsers, if there is any css implementation error,try to zoom out and it depends upon <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp laptop also. </P> <h3>SHORT CUT KEYS</h3><P>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1)To create post u can use TAB key <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 2)To send post OR To send comment u can use ENTER key <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 3)To remove text area or post area u can use ESCAPE key </P><BR>
-
-
 # LAIN.
 Loquacious Amigos Incessantly Nattering.<br>
 A place for SJEC students to be open with their thoughts.
@@ -12,9 +7,6 @@ A place for SJEC students to be open with their thoughts.
   - [Prerequisites](#prerequisites)
   - [Building](#building)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ## About
 The website uses GO for backend paired with CockroachDB, CSS and very few javascript for Frontend. Styling the website was done from scratch without any frameworks<br>
@@ -39,5 +31,6 @@ go build ./cmd/lain && ./lain
 ```
 
 ## Usage
-<h3>NOTE</h3>
-<P>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1)There might be some css implmentation errors like logout button would come out of navgiation bar or the text area where you message would exceed the screen.  <br>In order to fix the error, keep the zoom value to given following browsers <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -CHROME (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -MICROSOFT EDGE (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -FIREFOX (ZOOM 90%-100%)<BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 4)These errors were identified using only 3 browsers, if there is any css implementation error,try to zoom out and it depends upon <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp laptop also. </P> <h3>SHORT CUT KEYS</h3><P>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 1)To create post u can use TAB key <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 2)To send post OR To send comment u can use ENTER key <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 3)To remove text area or post area u can use ESCAPE key </P><BR>
+<P>There might be some css implmentation errors like logout button would come out of navgiation bar or the text area where you message would exceed the screen.  <br>In order to fix the error, keep the zoom value to given following browsers <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * CHROME (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * MICROSOFT EDGE (ZOOM-100%) <BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp * MOZILLA FIREFOX (ZOOM 90%-100%)<BR> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br> These errors were identified using only 3 browsers, if there is any css implementation error,try to zoom out and it depends upon the screen ratio too. </P> 
+<h3>SHORT CUT KEYS</h3>
+* To create post u can use TAB key <br> * To send post OR To send comment u can use ENTER key <BR> * 3)To remove text area or post area u can use ESCAPE key
