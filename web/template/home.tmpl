@@ -7,7 +7,7 @@
          <div>
              <button id="createPostBtn">CREATE POST</button>
             <form action="/posts" method="POST" id="createPostForm" style="display: none;">
-             <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="135" required>
+             <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="150" required>
              {{- .CreatePostForm.Get "content" -}}
               </textarea>
               {{with .CreatePostErr}}
@@ -21,9 +21,8 @@
 
     {{range .Posts}}
         {{template "post-article.tmpl" .}}
-        
     {{end}}
-    <button id="scrollToTopBtn">Scroll to Top</button>
+    <button id="scrollToTopBtn"><iconify-icon id="icon-2" icon="bi:caret-up-square"></iconify-icon></button>
 </main>
 <!-- ... (your existing HTML code) -->
 
@@ -60,7 +59,7 @@
         toggleScrollToTopButton();
     });
     scrollToTopBtn.addEventListener('click', function () {
-        document.body.scrollTop = 0;  
+        document.body.scrollTop = 0; 
         document.documentElement.scrollTop = 0; 
     });
 </script>

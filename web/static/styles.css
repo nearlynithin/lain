@@ -572,34 +572,20 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff; /* Change the background color as needed */
-    color: #fff; /* Change the text color as needed */
+    display: none;
+    background: transparent;
     border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    outline: none;
 }
-.icon-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #eeff00; /* Change the background color as needed */
-    color: #fff; /* Change the icon color as needed */
+  
+  #scrollToTopBtn iconify-icon {
     border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.icon-container:hover {
-    background-color: #0056b3; /* Change the hover background color as needed */
-}
-
-.icon-container iconify-icon {
-    width: 24px; /* Adjust the icon size as needed */
-    height: 24px;
-    fill: currentColor;
-}
-
+    background-color: white;
+    font-size: 40px;
+    border-radius: 10px;
+    color: #0d424a;
+    box-shadow: 2px 2px 1px #0d424a;
+  }
+  #scrollToTopBtn iconify-icon:active{
+    box-shadow: none;
+  }
