@@ -7,7 +7,7 @@
          <div>
              <button id="createPostBtn">CREATE POST</button>
             <form action="/posts" method="POST" id="createPostForm" style="display: none;">
-             <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="135" required>
+             <textarea id="textarea" name="content" aria-label="content" placeholder="SAY HI!!" rows="1" cols="150" required>
              {{- .CreatePostForm.Get "content" -}}
               </textarea>
               {{with .CreatePostErr}}
@@ -21,9 +21,26 @@
 
     {{range .Posts}}
         {{template "post-article.tmpl" .}}
-        
     {{end}}
+    <button id="scrollToTopBtn"><iconify-icon id="icon-2" icon="bi:caret-up-square"></iconify-icon></button>
 </main>
+<script>
+    var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    function toggleScrollToTopButton() {
+        if (window.pageYOffset > 20) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    }
+    window.addEventListener('scroll', function () {
+        toggleScrollToTopButton();
+    });
+    scrollToTopBtn.addEventListener('click', function () {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
+    });
+</script>
 <script>
     let myButton = document.getElementById('createPostBtn');
     document.addEventListener('keydown', function (event){

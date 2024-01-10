@@ -17,6 +17,7 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
+
 </head>
 <body>
     {{template "header.tmpl" .}}
@@ -26,7 +27,7 @@
     <link rel="stylesheet" href="styles.css">
     {{end}}
     <script>
-        var currentUrl = window.location.href;
+        let currentUrl = window.location.href;
         if (currentUrl.match(/\/p\/[@a-zA-Z0-9]+/)) {
             document.getElementById('css-link').href ="/styles.css";
         }
