@@ -3,14 +3,14 @@
         <a class="heading-article" href="@{{.Username}}">{{.Username}}</a>
             <time-ago>
                 <script>
-                    var createdAt = new Date('{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}');
-                    var now = new Date();
-                    var timeDifference = now - createdAt;
+                    let createdAt = new Date('{{.CreatedAt.Format "2006-01-02T15:04:05Z07:00"}}');
+                    let now = new Date();
+                    let timeDifference = now - createdAt;
                 
-                    var seconds = Math.floor(timeDifference / 1000);
-                    var minutes = Math.floor(seconds / 60);
-                    var hours = Math.floor(minutes / 60);
-                    var days = Math.floor(hours / 24);
+                    let seconds = Math.floor(timeDifference / 1000);
+                    let minutes = Math.floor(seconds / 60);
+                    let hours = Math.floor(minutes / 60);
+                    let days = Math.floor(hours / 24);
                 
                     if (days > 0) {
                         document.write('<span class="time-ago">' +days + (days === 1 ? " d" : " d") + " ago");
